@@ -11,10 +11,9 @@
    ========================================================================== */
 .tn-hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: clamp(580px, 88vh, 880px);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -47,15 +46,15 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-bottom: 5rem;
-  padding-top: calc(var(--header-height) + 4rem);
+  padding-bottom: 3.5rem;
+  padding-top: calc(var(--header-height) + 3rem);
 }
 
 .tn-hero-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: flex-end;
+  align-items: center;
 }
 
 /* Left editorial block */
@@ -92,8 +91,8 @@
 
 .tn-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 900;
+  font-size: clamp(2.15rem, 4.4vw, 3.75rem);
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1.0;
   letter-spacing: 0.01em;
@@ -189,7 +188,7 @@
 .tn-event-card-title {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.03em;
   line-height: 1.2;
@@ -224,7 +223,7 @@
 .tn-countdown-num {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
 }
@@ -258,7 +257,7 @@
 .tn-prize-amount {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
 }
 
@@ -304,7 +303,7 @@
 .tn-section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -338,7 +337,7 @@
   grid-template-columns: 80px 1fr auto;
   gap: 2rem;
   align-items: center;
-  padding: 1.75rem 0;
+  padding: 1.75rem 1rem;
   border-top: 1px solid var(--border-color);
   transition: background 0.2s ease;
 }
@@ -346,15 +345,16 @@
 .tn-event-row:last-child { border-bottom: 1px solid var(--border-color); }
 
 .tn-event-row:hover { background: var(--bg-surface-elevated); }
-.tn-event-row:hover .tn-event-num { color: var(--color-gold); }
+.tn-event-row:hover .tn-event-num { color: var(--color-gold); opacity: 1; }
 
 .tn-event-num {
   font-family: var(--font-heading);
   font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--border-color);
+  font-weight: 700;
+  color: var(--text-main);
+  opacity: 0.25;
   line-height: 1;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
   text-align: center;
   flex-shrink: 0;
 }
@@ -368,7 +368,7 @@
 .tn-event-name {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.02em;
 }
@@ -428,7 +428,7 @@
 .tn-event-prize-num {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
 }
@@ -491,7 +491,9 @@
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
-  right: 1.5rem;
+  right: auto;
+  width: fit-content;
+  max-width: calc(100% - 3rem);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -502,7 +504,7 @@
   border-radius: 8px;
 }
 
-[dir="rtl"] .tn-champions-img-badge { left: 1.5rem; right: 1.5rem; }
+[dir="rtl"] .tn-champions-img-badge { left: auto; right: 1.5rem; }
 
 .tn-badge-icon {
   width: 44px;
@@ -522,7 +524,7 @@
   display: block;
   font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
 }
 
@@ -572,7 +574,7 @@
 .tn-champ-rank-num {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
 }
@@ -593,7 +595,7 @@
 .tn-champ-name {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.02em;
 }
@@ -608,7 +610,7 @@
 .tn-champ-prize {
   font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--color-gold);
   white-space: nowrap;
 }
@@ -634,7 +636,7 @@
 .tn-enter-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.03em;
   margin-top: 0.5rem;
@@ -667,7 +669,7 @@
 .tn-step-num {
   font-family: var(--font-heading);
   font-size: 3.5rem;
-  font-weight: 900;
+  font-weight: 700;
   color: rgba(212,175,55,0.15);
   line-height: 1;
   position: absolute;
@@ -695,7 +697,7 @@
 .tn-step-title {
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.02em;
 }
@@ -747,7 +749,7 @@
 .tn-cta-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -837,12 +839,27 @@
 /* ==========================================================================
    RESPONSIVE — Tournaments
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1032px) {
   .tn-hero-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .tn-hero-right { justify-content: flex-start; }
+  .tn-hero-left {
+    align-items: center;
+    text-align: center;
+  }
+  .tn-hero-eyebrow {
+    justify-content: center;
+  }
+  .tn-hero-desc {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tn-hero-actions {
+    justify-content: center;
+  }
+  .tn-hero-right { justify-content: center; }
   .tn-next-event-card { max-width: 100%; }
 
   .tn-champions-inner {
@@ -858,7 +875,20 @@
   .tn-cta {
     grid-template-columns: 1fr;
   }
-  .tn-cta-left { padding: 3.5rem 2rem; }
+  .tn-cta-left {
+    padding: 3.5rem 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .tn-cta-content {
+    align-items: center;
+  }
+  .tn-cta-eyebrow {
+    justify-content: center;
+  }
+  .tn-cta-actions {
+    justify-content: center;
+  }
   .tn-cta-right { min-height: 320px; }
 }
 
@@ -867,10 +897,13 @@
   .tn-hero-title { font-size: clamp(2rem, 7vw, 3rem); }
 
   .tn-event-row {
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 52px 1fr auto;
     gap: 1rem;
+    padding: 1.35rem 0.75rem;
   }
-  .tn-event-prize-col { display: none; }
+  .tn-event-num {
+    font-size: 1.65rem;
+  }
 
   .tn-champions-img-wrap img { height: 280px; }
 
@@ -886,15 +919,63 @@
   }
 
   .tn-cta-left { padding: 3rem 1.5rem; }
-  .tn-cta-content { max-width: 100%; }
+  .tn-cta-content { max-width: 520px; margin: 0 auto; }
+}
+
+@media (max-width: 540px) {
+  .tn-event-row {
+    grid-template-columns: 44px 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    padding: 1.25rem 0.5rem;
+  }
+  .tn-event-num {
+    font-size: 1.45rem;
+    padding-top: 0.15rem;
+  }
+  .tn-event-prize-col {
+    grid-column: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--border-color);
+  }
 }
 
 @media (max-width: 480px) {
-  .tn-hero-actions { flex-direction: column; align-items: flex-start; }
+  .tn-hero-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .tn-hero-actions .tn-btn-gold,
+  .tn-hero-actions .tn-btn-outline {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
   .tn-countdown-row { grid-template-columns: repeat(2,1fr); }
-  .tn-event-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  .tn-champion-row { grid-template-columns: 50px 1fr; }
-  .tn-champ-prize { display: none; }
-  .tn-cta-actions { flex-direction: column; }
+  .tn-event-meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+  .tn-champion-row {
+    grid-template-columns: 44px 1fr auto;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .tn-champ-prize { font-size: 0.9rem; }
+  .tn-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .tn-cta-btn-gold,
+  .tn-cta-btn-ghost {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
 }
 

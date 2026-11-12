@@ -79,8 +79,8 @@
 
 .pr-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-  font-weight: 900;
+  font-size: clamp(2.15rem, 4.4vw, 3.75rem);
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 0.98;
   letter-spacing: 0.01em;
@@ -152,8 +152,8 @@
 
 /* Right stats panel */
 .pr-hero-stats-panel {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: rgba(212,175,55,0.15);
   border: 1px solid rgba(212,175,55,0.2);
@@ -163,10 +163,10 @@
 
 .pr-stat-block {
   background: rgba(0,0,0,0.5);
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
   transition: background 0.2s ease;
 }
 
@@ -190,7 +190,7 @@
   display: block;
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
 }
@@ -236,7 +236,7 @@
 .pr-section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -280,7 +280,7 @@
 .pr-th-tier {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
 }
@@ -418,7 +418,7 @@
 .pr-visual-img-title {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1.1;
   letter-spacing: 0.03em;
@@ -622,7 +622,7 @@
 .pr-cta-title {
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 900;
+  font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 0.03em;
   line-height: 1.0;
@@ -695,6 +695,7 @@
 .pr-cta-img-strip {
   display: grid;
   grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: end;
   gap: 1rem;
   position: relative;
   z-index: 1;
@@ -724,29 +725,80 @@
 /* ==========================================================================
    RESPONSIVE — Pricing
    ========================================================================== */
-@media (max-width: 1024px) {
-  .pr-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+@media (max-width: 1032px) {
+  .pr-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .pr-hero-eyebrow { justify-content: center; }
+  .pr-hero-desc {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pr-hero-actions { justify-content: center; }
+  .pr-hero-stats-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: start;
+  }
   .pr-visual { grid-template-columns: 1fr; }
   .pr-visual-img-side { min-height: 360px; }
   .pr-visual-text-side { padding: 3rem 2rem; }
   .pr-faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .pr-faq-left { position: static; }
-  .pr-cta-img-strip { grid-template-columns: 1fr 1fr; }
-  .pr-cta-strip-img:last-child { display: none; }
+  .pr-faq-left {
+    position: static;
+    text-align: center;
+  }
+  .pr-faq-left .pr-section-eyebrow {
+    justify-content: center;
+  }
+  .pr-faq-left p {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pr-faq-contact-link {
+    justify-content: center;
+  }
+  .pr-cta-img-strip { grid-template-columns: 1fr 1.25fr 1fr; }
 }
 
 @media (max-width: 768px) {
   .pr-hero { padding-bottom: 3rem; }
   .pr-hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
-  .pr-hero-actions { flex-direction: column; align-items: flex-start; }
+  .pr-hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .pr-compare-table th, .pr-compare-table td { padding: 0.75rem 0.6rem; }
-  .pr-cta-img-strip { grid-template-columns: 1fr; }
-  .pr-cta-strip-img:not(.tall) { display: none; }
-  .pr-cta-strip-img.tall { height: 220px; border-radius: 8px 8px 0 0; }
+  .pr-cta-img-strip { grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+  .pr-cta-strip-img { height: 150px; }
+  .pr-cta-strip-img.tall { height: 190px; }
 }
 
 @media (max-width: 480px) {
+  .pr-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pr-btn-primary,
+  .pr-btn-ghost {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
   .pr-cta-actions { flex-direction: column; align-items: center; }
-  .pr-hero-stats-panel { gap: 0; }
+  .pr-cta-img-strip { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .pr-cta-strip-img { height: 130px; }
+  .pr-cta-strip-img.tall { grid-column: span 2; height: 170px; order: -1; }
+  .pr-hero-stats-panel {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0;
+  }
 }
 

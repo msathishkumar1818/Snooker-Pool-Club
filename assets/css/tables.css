@@ -21,7 +21,7 @@
 .tb-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.8vw, 3.1rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.03em;
   color: var(--text-main);
@@ -97,8 +97,8 @@
 
 .tb-banner-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-  font-weight: 900;
+  font-size: clamp(2.1rem, 4.4vw, 3.65rem);
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 0.98;
   letter-spacing: -0.01em;
@@ -215,7 +215,7 @@
 .tb-table-cell-num {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   line-height: 1;
 }
@@ -431,7 +431,7 @@
 .tb-spec-name {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   margin-bottom: 0.4rem;
@@ -496,7 +496,7 @@
 .tb-spec-count-num {
   font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
 }
@@ -605,7 +605,7 @@
 .tb-step-num {
   font-family: var(--font-heading);
   font-size: 0.65rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--color-gold);
   text-transform: uppercase;
@@ -615,7 +615,7 @@
 .tb-step-title {
   font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.02em;
   margin-bottom: 0.6rem;
@@ -739,7 +739,7 @@
 .tb-cta-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.5vw, 2.9rem);
-  font-weight: 900;
+  font-weight: 700;
   color: var(--text-main);
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -831,7 +831,7 @@
 .tb-cta-img-label-num {
   font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
   display: block;

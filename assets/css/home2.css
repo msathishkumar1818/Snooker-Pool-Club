@@ -28,7 +28,7 @@
 .h2-section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.8vw, 3.1rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.03em;
   color: var(--text-main);
@@ -98,10 +98,10 @@
 
 .h2-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.75rem, 5.5vw, 5.25rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.15rem, 4.4vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
   color: #FFFFFF;
   margin-bottom: 2rem;
 }
@@ -273,7 +273,7 @@
   display: block;
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -397,7 +397,7 @@
 .h2-table-info-side h3 {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
 }
 
@@ -547,7 +547,7 @@
   justify-content: center;
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--color-gold);
   flex-shrink: 0;
   box-shadow: 0 0 0 6px rgba(212,175,55,0.08);
@@ -611,7 +611,7 @@
 .h2-step-text h3 {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   margin-bottom: 0.75rem;
   letter-spacing: 0.03em;
@@ -698,7 +698,7 @@
 .h2-big-stat-num {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4.5vw, 4rem);
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
   letter-spacing: -0.02em;
@@ -804,7 +804,7 @@
 .h2-dual-title {
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   margin-bottom: 0.65rem;
   letter-spacing: 0.03em;
@@ -949,7 +949,7 @@
 .h2-tier-name {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -974,7 +974,7 @@
 .h2-tier-price-amount {
   font-family: var(--font-heading);
   font-size: 2.75rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-gold);
 }
 

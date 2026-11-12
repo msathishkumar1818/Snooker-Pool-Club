@@ -87,8 +87,8 @@
 
 .ct-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 900;
+  font-size: clamp(2.15rem, 4.4vw, 3.75rem);
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1.0;
   letter-spacing: 0.01em;
@@ -121,7 +121,6 @@
 .ct-hero-quick-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  divide-gap: 0;
 }
 
 .ct-quick-item {
@@ -214,7 +213,7 @@
 .ct-section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -342,7 +341,7 @@
 .ct-form-title {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   margin-bottom: 0.4rem;
@@ -521,7 +520,7 @@
 .ct-map-label-name {
   font-family: var(--font-heading);
   font-size: 0.9rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.03em;
 }
@@ -556,7 +555,7 @@
 .ct-hours-title {
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -609,6 +608,8 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
   padding: 1rem 1.25rem;
   background: rgba(212,175,55,0.08);
   border: 1px solid rgba(212,175,55,0.2);
@@ -666,7 +667,7 @@
 .ct-live-map-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 3.6vw, 2.75rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   line-height: 1.1;
 }
@@ -772,7 +773,7 @@
 .ct-cta-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-main);
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -797,6 +798,7 @@
 .ct-cta-btn-gold {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   padding: 0.95rem 2rem;
   font-size: 0.9rem;
@@ -822,6 +824,7 @@
 .ct-cta-btn-ghost {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.95rem 1.75rem;
   font-size: 0.9rem;
@@ -857,6 +860,19 @@
     padding: 3rem 2rem;
     border-left: none;
     border-top: 1px solid var(--border-color);
+    justify-content: center;
+    text-align: center;
+  }
+  .ct-cta-content {
+    align-items: center;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .ct-cta-eyebrow {
+    justify-content: center;
+  }
+  .ct-cta-actions {
+    justify-content: center;
   }
   [dir="rtl"] .ct-cta-content-side { border-right: none; border-top: 1px solid var(--border-color); }
 }
@@ -864,9 +880,8 @@
 @media (max-width: 768px) {
   .ct-hero { min-height: 80vh; }
   .ct-hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
-  .ct-hero-quick-inner { grid-template-columns: 1fr; }
-  .ct-quick-item { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.15); }
-  .ct-quick-item:last-child { border-bottom: none; }
+  .ct-hero-quick-inner { grid-template-columns: repeat(3, 1fr); }
+  .ct-quick-item { padding: 1rem 0.75rem; gap: 0.65rem; }
 
   .ct-form-panel { padding: 1.75rem 1.25rem; }
   .ct-field-row { grid-template-columns: 1fr; }
@@ -878,14 +893,38 @@
 
   .ct-cta-img { height: 230px; min-height: 0; }
   .ct-cta-content-side { padding: 2.5rem 1.5rem; }
-  .ct-cta-content { max-width: 100%; }
+  .ct-cta-content { max-width: 520px; }
+}
+
+@media (max-width: 560px) {
+  .ct-hero-quick-inner {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .ct-quick-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+    padding: 1rem 1.25rem;
+  }
+  .ct-quick-item:last-child { border-bottom: none; }
 }
 
 @media (max-width: 480px) {
   .ct-hero-inner { gap: 1rem; }
   .ct-live-map-frame { height: 320px; }
   .ct-hours-grid { grid-template-columns: 1fr; }
-  .ct-cta-actions { flex-direction: column; }
+  .ct-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .ct-cta-btn-gold,
+  .ct-cta-btn-ghost {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
 }
 
 /* Equal height card utilities for channel cards */

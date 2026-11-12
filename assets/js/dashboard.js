@@ -12,7 +12,7 @@
 
   // --- 1. Theme Management ---
   function initDashboardTheme() {
-    const themeBtn = document.getElementById('db-theme-toggle');
+    const themeBtns = document.querySelectorAll('.db-theme-toggle-btn, #db-theme-toggle');
     const STORAGE_KEY = 'cue_theme_mode';
     const savedTheme = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('cue_theme');
 
@@ -22,29 +22,29 @@
       document.documentElement.classList.add('dark');
     }
 
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
       });
-    }
+    });
   }
 
   // --- 2. RTL/LTR Management ---
   function initDashboardRTL() {
-    const rtlBtn = document.getElementById('db-rtl-toggle');
+    const rtlBtns = document.querySelectorAll('.db-rtl-toggle-btn, #db-rtl-toggle');
     const STORAGE_KEY = 'cue_text_direction';
     const savedDir = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('cue_direction') || 'ltr';
     document.documentElement.setAttribute('dir', savedDir);
 
-    if (rtlBtn) {
-      rtlBtn.addEventListener('click', () => {
+    rtlBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
         const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
         const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
         document.documentElement.setAttribute('dir', newDir);
         localStorage.setItem(STORAGE_KEY, newDir);
       });
-    }
+    });
   }
 
   // --- 3. Sidebar Navigation & Tab Switching ---
