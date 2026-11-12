@@ -102,7 +102,27 @@
   height: 17px;
   stroke: currentColor;
   flex-shrink: 0;
-  display: block;
+}
+
+/* Dark mode icon swap */
+.db-ctrl-btn .sun-icon,
+.db-theme-toggle-btn .sun-icon {
+  display: none !important;
+}
+
+.db-ctrl-btn .moon-icon,
+.db-theme-toggle-btn .moon-icon {
+  display: block !important;
+}
+
+html.dark .db-ctrl-btn .sun-icon,
+html.dark .db-theme-toggle-btn .sun-icon {
+  display: block !important;
+}
+
+html.dark .db-ctrl-btn .moon-icon,
+html.dark .db-theme-toggle-btn .moon-icon {
+  display: none !important;
 }
 
 .db-logout-btn {
@@ -827,26 +847,32 @@ html.dark .db-nav-item.active button {
     right: -270px;
     bottom: 0;
     z-index: 60;
-    transition: right var(--transition-normal);
+    transition: right var(--transition-normal), visibility var(--transition-normal);
     box-shadow: var(--shadow-lg);
     border-right: none;
     border-left: 1px solid var(--border-color);
+    visibility: hidden;
+    pointer-events: none;
   }
 
   [dir="rtl"] .db-sidebar {
-    right: auto;
-    left: -270px;
-    transition: left var(--transition-normal);
-    border-left: none;
-    border-right: 1px solid var(--border-color);
+    right: -270px;
+    left: auto;
+    border-left: 1px solid var(--border-color);
+    border-right: none;
   }
 
   .db-sidebar.open {
     right: 0;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   [dir="rtl"] .db-sidebar.open {
-    left: 0;
+    right: 0;
+    left: auto;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .db-mobile-toggle {

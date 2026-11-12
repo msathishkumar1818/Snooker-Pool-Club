@@ -442,7 +442,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   height: 18px;
   stroke: currentColor;
   flex-shrink: 0;
-  display: block;
 }
 
 .rtl-toggle-btn {
@@ -464,10 +463,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* Dark mode icon swap */
-.sun-icon { display: none; }
-.moon-icon { display: block; }
-html.dark .sun-icon { display: block; }
-html.dark .moon-icon { display: none; }
+.ctrl-btn .sun-icon,
+.theme-toggle-btn .sun-icon,
+.sun-icon {
+  display: none !important;
+}
+
+.ctrl-btn .moon-icon,
+.theme-toggle-btn .moon-icon,
+.moon-icon {
+  display: block !important;
+}
+
+html.dark .ctrl-btn .sun-icon,
+html.dark .theme-toggle-btn .sun-icon,
+html.dark .sun-icon {
+  display: block !important;
+}
+
+html.dark .ctrl-btn .moon-icon,
+html.dark .theme-toggle-btn .moon-icon,
+html.dark .moon-icon {
+  display: none !important;
+}
 
 /* Login Button (Replaces generic CTA) */
 .btn-login {
@@ -565,27 +583,49 @@ html.dark .moon-icon { display: none; }
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
   box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  pointer-events: none;
 }
 
-/* RTL Drawer placement */
+/* RTL Drawer placement — anchored to right to prevent cross-screen animation */
 [dir="rtl"] .mobile-menu-drawer {
-  right: auto;
-  left: 0;
-  border-left: none;
-  border-right: 1px solid var(--border-color);
-  transform: translateX(-100%);
-  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.4);
+  right: 0;
+  left: auto;
+  border-left: 1px solid var(--border-color);
+  border-right: none;
+  transform: translateX(100%);
 }
 
 .mobile-menu-open .mobile-menu-backdrop {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-open .mobile-menu-drawer {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+[dir="rtl"] .mobile-menu-open .mobile-menu-drawer {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* On Desktop screens (> 1032px), completely disable and hide the mobile drawer */
+@media (min-width: 1033px) {
+  .mobile-menu-drawer,
+  .mobile-menu-backdrop,
+  .mobile-toggle-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(100%) !important;
+  }
 }
 
 /* Mobile Drawer Header */
