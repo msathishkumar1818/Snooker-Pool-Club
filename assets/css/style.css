@@ -441,6 +441,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   width: 18px;
   height: 18px;
   stroke: currentColor;
+  flex-shrink: 0;
+  display: block;
 }
 
 .rtl-toggle-btn {
