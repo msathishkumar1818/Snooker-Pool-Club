@@ -1,0 +1,847 @@
+/* ==========================================================================
+   LOGIN PAGE (login.css)
+   Exactly 5 main content sections. All layouts unique.
+   Zero reuse from Home 1, Home 2, or About compositions.
+   ========================================================================== */
+
+/* ==========================================================================
+   SECTION 1 — LOGIN / REGISTER FORM SPLIT
+   Layout: Left full-height image panel | Right form panel with tab switcher
+   Unique: Dual-tab auth form with side image — not used in any other page
+   ========================================================================== */
+.lg-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+}
+
+/* Left image panel */
+.lg-img-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.lg-img-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.lg-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9) 0%,
+    rgba(11,70,38,0.5) 50%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.lg-img-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.lg-img-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.lg-img-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.lg-img-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lg-img-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lg-img-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.lg-img-quote em { color: var(--color-gold); font-style: italic; }
+
+.lg-img-sub {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+.lg-img-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.75rem;
+}
+
+.lg-img-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lg-img-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.lg-img-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+/* Right form panel */
+.lg-form-panel {
+  background: var(--bg-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 3.5rem;
+  position: relative;
+}
+
+.lg-form-wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Tab switcher */
+.lg-tab-row {
+  display: flex;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 2rem;
+}
+
+.lg-tab {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-main);
+  opacity: 0.6;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.lg-tab.lg-tab-active {
+  opacity: 1;
+  color: #000000;
+  background: var(--color-gold);
+  box-shadow: 0 2px 8px rgba(212,175,55,0.35);
+}
+
+.lg-form-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.lg-form-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.75;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+/* Form panels */
+.lg-panel { display: none; }
+.lg-panel.lg-panel-active { display: block; }
+
+.lg-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.lg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lg-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+.lg-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lg-input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+
+.lg-input::placeholder {
+  color: var(--text-main);
+  opacity: 0.4;
+}
+
+.lg-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.lg-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+  margin-bottom: 1.25rem;
+}
+
+.lg-submit-btn:hover {
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-1px);
+}
+
+.lg-submit-btn svg { width: 17px; height: 17px; stroke: currentColor; }
+
+.lg-form-footer-link {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  opacity: 0.75;
+}
+
+.lg-form-footer-link a {
+  color: var(--color-gold);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lg-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.lg-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.lg-divider-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.lg-forgot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.lg-forgot a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  transition: opacity 0.15s ease;
+}
+
+.lg-forgot a:hover { opacity: 0.8; }
+
+/* Select input (membership tier) */
+.lg-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 7px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.lg-select:focus { border-color: var(--color-gold); }
+
+.lg-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.lg-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--color-gold);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.lg-checkbox-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.lg-checkbox-label a {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   SECTION 2 — MEMBER BENEFITS (Horizontal 4-block strip)
+   Layout: 4 equal-width benefit blocks in horizontal row
+   Unique: Horizontal benefit strip — not used in any page
+   ========================================================================== */
+.lg-benefits {
+  padding: 4.5rem 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+}
+
+.lg-benefits-label {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.lg-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
+
+.lg-section-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.lg-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.lg-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lg-benefit-block {
+  background: var(--bg-surface);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background 0.2s ease;
+}
+
+.lg-benefit-block:hover {
+  background: rgba(212,175,55,0.05);
+}
+
+.lg-benefit-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.lg-benefit-icon svg { width: 24px; height: 24px; stroke: currentColor; }
+
+.lg-benefit-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.lg-benefit-desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* ==========================================================================
+   SECTION 3 — DASHBOARD FEATURES (Full-Width Dark Feature Showcase)
+   Layout: Dark emerald panel + horizontal scrollable feature pills + big image
+   Unique: Dark feature panel layout — not used in any other page
+   ========================================================================== */
+.lg-dashboard {
+  padding: 5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.lg-dashboard-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.lg-dashboard-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lg-dashboard-text p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.75;
+}
+
+.lg-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lg-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.lg-feature-item:hover {
+  border-color: var(--color-gold);
+}
+
+.lg-feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  background: rgba(212,175,55,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.lg-feature-icon svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.lg-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.lg-feature-text strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.lg-feature-text span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.72;
+}
+
+.lg-dashboard-img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  min-height: 420px;
+}
+
+.lg-dashboard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.lg-dashboard-img:hover img {
+  transform: scale(1.03);
+}
+
+.lg-dashboard-img-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[dir="rtl"] .lg-dashboard-img-badge {
+  left: auto;
+  right: 1.25rem;
+}
+
+.lg-dashboard-img-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: lgPulse 1.5s infinite ease-out;
+}
+
+@keyframes lgPulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* ==========================================================================
+   SECTION 4 — TRUST & SECURITY STRIP
+   Layout: Horizontal trust indicators on dark bar
+   Unique: Security-focused horizontal strip — not on any other page
+   ========================================================================== */
+.lg-trust {
+  background: linear-gradient(135deg, #000000 0%, #0B3820 50%, #000000 100%);
+  border-top: 1px solid rgba(212,175,55,0.2);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+  padding: 3rem 0;
+}
+
+.lg-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lg-trust-block {
+  background: rgba(0,0,0,0.5);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  transition: background 0.25s ease;
+}
+
+.lg-trust-block:hover {
+  background: rgba(212,175,55,0.08);
+}
+
+.lg-trust-block-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(212,175,55,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+}
+
+.lg-trust-block-icon svg { width: 24px; height: 24px; stroke: currentColor; }
+
+.lg-trust-block-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.lg-trust-block-desc {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 5 — CLOSING CTA (Mandatory)
+   Layout: Centered editorial CTA with key contact + pricing links
+   Unique: Minimal centred editorial close — not used in any page as-is
+   ========================================================================== */
+.lg-cta {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.lg-cta-content {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.lg-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.lg-cta-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.lg-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
+.lg-cta-title em { color: var(--color-gold); font-style: italic; }
+
+.lg-cta-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  line-height: 1.72;
+}
+
+.lg-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.lg-cta-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+}
+
+.lg-cta-btn-gold:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+
+.lg-cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.lg-cta-btn-ghost:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+/* ==========================================================================
+   LOGIN PAGE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1280px) {
+  .lg-form-panel { padding: 2.5rem 2.5rem; }
+  .lg-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .lg-dashboard-inner { gap: 2.5rem; }
+}
+
+@media (max-width: 1032px) {
+  .lg-split { grid-template-columns: 1fr; }
+  .lg-img-panel { min-height: 360px; }
+  .lg-form-panel { padding: 3rem 2rem; min-height: auto; }
+  .lg-form-wrap { max-width: 100%; }
+  .lg-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .lg-dashboard-inner { grid-template-columns: 1fr; }
+  .lg-dashboard-img { min-height: 320px; }
+  .lg-trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .lg-split { padding-top: var(--header-height); }
+  .lg-img-panel { min-height: 280px; }
+  .lg-img-quote { font-size: 1.5rem; }
+  .lg-img-stats { gap: 1.5rem; }
+  .lg-benefits-grid { grid-template-columns: 1fr; }
+  .lg-cta-actions { flex-direction: column; align-items: stretch; }
+  .lg-cta-btn-gold, .lg-cta-btn-ghost { justify-content: center; }
+}
+
+@media (max-width: 440px) {
+  .lg-form-panel { padding: 2rem 1.25rem; }
+  .lg-input-row { grid-template-columns: 1fr; }
+  .lg-trust-grid { grid-template-columns: 1fr; }
+  .lg-img-content { padding: 1.75rem; }
+  .lg-img-stats { flex-direction: column; gap: 0.75rem; }
+  .lg-benefit-block { padding: 1.5rem; }
+  .lg-trust-block { padding: 1.5rem 1.25rem; }
+}
+
+@media (max-width: 360px) {
+  .lg-tab { padding: 0.55rem 0.5rem; font-size: 0.8rem; }
+  .lg-form-title { font-size: 1.5rem; }
+  .lg-cta-title { font-size: 1.75rem; }
+}
+

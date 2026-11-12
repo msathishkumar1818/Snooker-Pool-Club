@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Login | The Cue Club — Snooker &amp; Pool Club</title>
+  <meta name="description"
+    content="Sign in to your Cue Club member account — book tables, track your hours, manage membership, and register for tournaments.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="cue-loader" role="status" aria-live="polite" aria-label="Loading The Cue Club">
+    <div class="loader-emblem">
+      <img src="assets/images/icons/logo.svg" alt="The Cue Club" width="90" height="90">
+      <div class="loader-ring"></div>
+    </div>
+    <span class="loader-text">The Cue Club</span>
+    <span class="loader-subtext">Snooker &amp; Pool Club</span>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="cue-header" role="banner">
+    <div class="cue-container header-inner">
+      <a href="index.html" class="brand-link" aria-label="The Cue Club Home">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club Emblem" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-item has-dropdown">
+          <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 — Grand Salon</span>
+              <span class="dropdown-badge">Classic</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 — Masters Arena</span>
+              <span class="dropdown-badge">Modern</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="tables.html" class="nav-link">Tables</a></div>
+        <div class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR direction"
+          title="Toggle RTL/LTR">RTL</button>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="login.html" class="btn-login active" aria-label="Member Login" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="brand-logo-img" width="38" height="38">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-controls-bar">
+      <div class="drawer-control-item">
+        <span>Dark Mode</span>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-control-item">
+        <span>RTL / LTR</span>
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+      </div>
+    </div>
+    <nav class="drawer-nav" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-accordion-item">
+        <button type="button" class="mobile-nav-link mobile-accordion-toggle" aria-expanded="false">
+          <span>Home</span>
+          <svg class="mobile-accordion-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="index.html" class="mobile-sub-link"><span>Home 1 — Grand Salon</span><span
+              class="dropdown-badge">Classic</span></a>
+          <a href="home-2.html" class="mobile-sub-link"><span>Home 2 — Masters Arena</span><span
+              class="dropdown-badge">Modern</span></a>
+        </div>
+      </div>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="tables.html" class="mobile-nav-link">Tables</a>
+      <a href="tournaments.html" class="mobile-nav-link">Tournaments</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn-login" aria-label="Member Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Member Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         SECTION 1 — AUTH SPLIT SCREEN
+         Layout: Left full-height image panel | Right form panel (Login/Register tabs)
+         Unique: Dual-tab form with cinematic side image
+         ======================================================================== -->
+    <section class="lg-split" aria-label="Member Authentication">
+
+      <!-- Left Image Panel -->
+      <div class="lg-img-panel" role="img" aria-label="Championship snooker table at The Cue Club">
+        <img src="assets/images/sections/login-side-panel.jpg"
+          alt="Championship snooker table baize under dramatic atmospheric spotlighting" width="900" height="1200"
+          loading="eager">
+        <div class="lg-img-overlay" aria-hidden="true"></div>
+        <div class="lg-img-content">
+          <div class="lg-img-logo-row">
+            <img src="assets/images/icons/logo.svg" alt="The Cue Club Crest" class="lg-img-logo" width="48"
+              height="48">
+            <div>
+              <div class="lg-img-brand-name">The Cue Club</div>
+              <div class="lg-img-brand-sub">Snooker &amp; Pool Club</div>
+            </div>
+          </div>
+          <h2 class="lg-img-quote">
+            Precision.<br>Passion.<br><em>Performance.</em>
+          </h2>
+          <p class="lg-img-sub">Championship tables and private club heritage since 1998.</p>
+          <div class="lg-img-stats">
+            <div class="lg-img-stat">
+              <span class="lg-img-stat-num">24</span>
+              <span class="lg-img-stat-label">Tables</span>
+            </div>
+            <div class="lg-img-stat">
+              <span class="lg-img-stat-num">1,200+</span>
+              <span class="lg-img-stat-label">Members</span>
+            </div>
+            <div class="lg-img-stat">
+              <span class="lg-img-stat-num">28yr</span>
+              <span class="lg-img-stat-label">Heritage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Panel -->
+      <div class="lg-form-panel">
+        <div class="lg-form-wrap">
+
+          <!-- Tab Switcher -->
+          <div class="lg-tab-row" role="tablist" aria-label="Authentication options">
+            <button type="button" class="lg-tab lg-tab-active" data-tab="login" role="tab" aria-selected="true"
+              aria-controls="lg-panel-login">Sign In</button>
+            <button type="button" class="lg-tab" data-tab="register" role="tab" aria-selected="false"
+              aria-controls="lg-panel-register">Create Account</button>
+          </div>
+
+          <!-- Form Header (swapped by JS) -->
+          <div>
+            <h1 class="lg-form-title" id="lg-form-title">Welcome Back</h1>
+            <p class="lg-form-subtitle" id="lg-form-subtitle">Sign in to your member account to book tables and manage
+              your profile.</p>
+          </div>
+
+          <!-- LOGIN PANEL (Directs into dashboard.html) -->
+          <div class="lg-panel lg-panel-active" id="lg-panel-login" role="tabpanel" aria-labelledby="lg-tab-login">
+            <form action="dashboard.html" method="get">
+              <div class="lg-field-group">
+                <div class="lg-field">
+                  <label for="login-email" class="lg-label">Member Email</label>
+                  <input type="email" id="login-email" name="email" class="lg-input" placeholder="james.whitfield@cueclub.vip"
+                    autocomplete="email" required>
+                </div>
+                <div class="lg-field">
+                  <label for="login-password" class="lg-label">Password</label>
+                  <input type="password" id="login-password" name="password" class="lg-input" placeholder="••••••••••••"
+                    autocomplete="current-password" required>
+                  <div class="lg-forgot">
+                    <a href="#">Forgot password?</a>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="lg-submit-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                  <polyline points="10 17 15 12 10 7"></polyline>
+                  <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                Sign In to Member Portal
+              </button>
+              <p class="lg-form-footer-link">
+                Not a member yet? <a href="#" id="switch-to-register">Create your account</a>
+              </p>
+            </form>
+          </div>
+
+          <!-- REGISTER PANEL -->
+          <div class="lg-panel" id="lg-panel-register" role="tabpanel" aria-labelledby="lg-tab-register">
+            <form action="dashboard.html" method="get">
+              <div class="lg-field-group">
+                <div class="lg-input-row">
+                  <div class="lg-field">
+                    <label for="reg-first" class="lg-label">First Name</label>
+                    <input type="text" id="reg-first" name="first_name" class="lg-input" placeholder="James"
+                      autocomplete="given-name" required>
+                  </div>
+                  <div class="lg-field">
+                    <label for="reg-last" class="lg-label">Last Name</label>
+                    <input type="text" id="reg-last" name="last_name" class="lg-input" placeholder="Whitfield"
+                      autocomplete="family-name" required>
+                  </div>
+                </div>
+                <div class="lg-field">
+                  <label for="reg-email" class="lg-label">Email Address</label>
+                  <input type="email" id="reg-email" name="email" class="lg-input" placeholder="your@email.com"
+                    autocomplete="email" required>
+                </div>
+                <div class="lg-field">
+                  <label for="reg-phone" class="lg-label">Phone Number</label>
+                  <input type="tel" id="reg-phone" name="phone" class="lg-input" placeholder="+1 (800) 000-0000"
+                    autocomplete="tel">
+                </div>
+                <div class="lg-field">
+                  <label for="reg-tier" class="lg-label">Membership Tier</label>
+                  <select id="reg-tier" name="membership_tier" class="lg-select">
+                    <option value="" disabled selected>Select your tier…</option>
+                    <option value="bronze">Bronze — Walk-In Access</option>
+                    <option value="silver">Silver — Priority Booking</option>
+                    <option value="gold">Gold — Unlimited + VIP Lounge</option>
+                    <option value="masters">Masters — Full Championship Suite</option>
+                  </select>
+                </div>
+                <div class="lg-field">
+                  <label for="reg-password" class="lg-label">Create Password</label>
+                  <input type="password" id="reg-password" name="password" class="lg-input" placeholder="Min. 8 characters"
+                    autocomplete="new-password" required>
+                </div>
+                <div class="lg-checkbox-row">
+                  <input type="checkbox" id="reg-terms" name="terms" class="lg-checkbox" required>
+                  <label for="reg-terms" class="lg-checkbox-label">I agree to the <a href="#">Member Terms</a> and <a
+                      href="#">Privacy Charter</a></label>
+                </div>
+              </div>
+              <button type="submit" class="lg-submit-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <line x1="19" y1="8" x2="19" y2="14"></line>
+                  <line x1="22" y1="11" x2="16" y2="11"></line>
+                </svg>
+                Create Member Account
+              </button>
+              <p class="lg-form-footer-link">
+                Already a member? <a href="#" id="switch-to-login">Sign in here</a>
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — MEMBER BENEFITS -->
+    <section class="lg-benefits" aria-label="Member Benefits">
+      <div class="cue-container">
+        <div class="lg-benefits-label">
+          <div class="lg-section-eyebrow">
+            <span class="lg-section-eyebrow-line" aria-hidden="true"></span>
+            Member Privileges
+            <span class="lg-section-eyebrow-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="lg-section-title">Why Members Love The Cue Club</h2>
+        </div>
+        <div class="lg-benefits-grid">
+
+          <div class="lg-benefit-block">
+            <div class="lg-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="lg-benefit-title">Priority Table Booking</h3>
+            <p class="lg-benefit-desc">Book any of 24 tables 7 days ahead (14 days for Gold &amp; Masters).</p>
+          </div>
+
+          <div class="lg-benefit-block">
+            <div class="lg-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <h3 class="lg-benefit-title">Tournament Entry</h3>
+            <p class="lg-benefit-desc">Exclusive access to 18 annual tournaments across snooker and pool.</p>
+          </div>
+
+          <div class="lg-benefit-block">
+            <div class="lg-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="lg-benefit-title">Coaching Masterclasses</h3>
+            <p class="lg-benefit-desc">One-on-one pro clinics with live progress tracking in your portal.</p>
+          </div>
+
+          <div class="lg-benefit-block">
+            <div class="lg-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="lg-benefit-title">VIP Lounge Access</h3>
+            <p class="lg-benefit-desc">Private lounge bar and climate-controlled Cue Vault for Gold &amp; Masters.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — DASHBOARD PREVIEW -->
+    <section class="lg-dashboard" aria-label="Member Dashboard Features">
+      <div class="cue-container">
+        <div class="lg-dashboard-inner">
+
+          <div class="lg-dashboard-text">
+            <div>
+              <div class="lg-section-eyebrow">
+                <span class="lg-section-eyebrow-line" aria-hidden="true"></span>
+                Member Dashboard
+              </div>
+              <h2 class="lg-section-title">Your Game.<br>Fully in Control.</h2>
+            </div>
+            <p>Manage table bookings, track playing hours, and enter tournaments from one portal.</p>
+            <div class="lg-feature-list">
+
+              <div class="lg-feature-item">
+                <div class="lg-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="lg-feature-text">
+                  <strong>Live Table Booking</strong>
+                  <span>Real-time table availability and instant reservation</span>
+                </div>
+              </div>
+
+              <div class="lg-feature-item">
+                <div class="lg-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <div class="lg-feature-text">
+                  <strong>Play Hours Tracker</strong>
+                  <span>Monthly and lifetime session analytics</span>
+                </div>
+              </div>
+
+              <div class="lg-feature-item">
+                <div class="lg-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                </div>
+                <div class="lg-feature-text">
+                  <strong>Tournament Registration</strong>
+                  <span>Browse and register for upcoming competitions</span>
+                </div>
+              </div>
+
+              <div class="lg-feature-item">
+                <div class="lg-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="lg-feature-text">
+                  <strong>Membership Management</strong>
+                  <span>Renew, upgrade tier, and manage billing seamlessly</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="lg-dashboard-img">
+            <img src="assets/images/sections/login-dashboard-bg.jpg"
+              alt="The Cue Club member dashboard interface showing table booking and session analytics"
+              width="700" height="560" loading="lazy">
+            <div class="lg-dashboard-img-badge">
+              <span class="lg-dashboard-img-badge-dot" aria-hidden="true"></span>
+              Live Dashboard
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — TRUST STRIP -->
+    <section class="lg-trust" aria-label="Security and Trust Guarantees">
+      <div class="cue-container">
+        <div class="lg-trust-grid">
+
+          <div class="lg-trust-block">
+            <div class="lg-trust-block-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="lg-trust-block-title">256-Bit Encryption</div>
+            <div class="lg-trust-block-desc">Bank-grade SSL/TLS encryption across every session.</div>
+          </div>
+
+          <div class="lg-trust-block">
+            <div class="lg-trust-block-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="lg-trust-block-title">Secure Member Portal</div>
+            <div class="lg-trust-block-desc">Private, role-verified access to bookings and records.</div>
+          </div>
+
+          <div class="lg-trust-block">
+            <div class="lg-trust-block-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="lg-trust-block-title">24/7 Availability</div>
+            <div class="lg-trust-block-desc">Book tables and manage plans anytime, day or night.</div>
+          </div>
+
+          <div class="lg-trust-block">
+            <div class="lg-trust-block-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div class="lg-trust-block-title">Member Satisfaction</div>
+            <div class="lg-trust-block-desc">98.6% member satisfaction with live concierge help.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — CLOSING CTA -->
+    <section class="lg-cta" aria-label="Join The Cue Club">
+      <div class="cue-container">
+        <div class="lg-cta-content">
+          <div class="lg-cta-eyebrow">
+            <span class="lg-cta-eyebrow-line" aria-hidden="true"></span>
+            Ready to Play?
+            <span class="lg-cta-eyebrow-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="lg-cta-title">Not Yet a Member?<br><em>Join Today.</em></h2>
+          <p class="lg-cta-desc">Four membership tiers starting from £49/month with full dashboard access.</p>
+          <div class="lg-cta-actions">
+            <a href="pricing.html" class="lg-cta-btn-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" width="17" height="17">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              View Membership Plans
+            </a>
+            <a href="contact.html" class="lg-cta-btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" width="17" height="17">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42C1.6 2.3 2.4 1.5 3.52 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"></path>
+              </svg>
+              Speak to Concierge
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button type="button" class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="cue-footer" role="contentinfo" aria-label="Site Footer">
+    <div class="cue-container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-header">
+            <img src="assets/images/icons/logo.svg" alt="The Cue Club Crest" class="footer-logo-img" width="52"
+              height="52">
+            <div>
+              <span class="footer-brand-name">The Cue Club</span>
+              <div class="footer-brand-sub">Snooker &amp; Pool Club</div>
+            </div>
+          </div>
+          <p class="footer-bio">Championship Star and Riley Aristocrat tables, bespoke cue vaults, and luxury members lounge.</p>
+          <div class="footer-badges">
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              Tournament Grade
+            </span>
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              VIP Member Access
+            </span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Discovery</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Grand Salon</a></li>
+            <li><a href="home-2.html">Home 2 — Masters Arena</a></li>
+            <li><a href="about.html">About Heritage</a></li>
+            <li><a href="tables.html">Championship Tables</a></li>
+            <li><a href="tournaments.html">Tournaments &amp; League</a></li>
+            <li><a href="pricing.html">Membership &amp; Rates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Hours</h4>
+          <div class="footer-schedule">
+            <div class="schedule-row"><span class="schedule-day">Mon &ndash; Thu</span><span class="schedule-time">10:00
+                AM &ndash; Midnight</span></div>
+            <div class="schedule-row"><span class="schedule-day">Friday</span><span class="schedule-time">10:00 AM
+                &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Saturday</span><span class="schedule-time">09:00 AM
+                &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Sunday</span><span class="schedule-time">09:00 AM
+                &ndash; Midnight</span></div>
+          </div>
+          <div style="margin-top:1.25rem">
+            <div
+              style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gold);font-weight:700">
+              Direct Concierge</div>
+            <div style="color:#fff;font-weight:700;font-size:1rem;margin-top:0.25rem">+1 (800) 555-CUES</div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">The Cue Gazette</h4>
+          <p class="footer-newsletter-text">Tournament invites, pro coaching clinics, and club nights.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="newsletter-input" placeholder="Your member email..." required
+              aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="cue-container footer-bottom-inner">
+        <div>&copy; 2026 The Cue Club &bull; Snooker &amp; Pool Club. All rights reserved.</div>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Charter</a></li>
+          <li><a href="#">Club By-Laws</a></li>
+          <li><a href="contact.html">Member Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/login-tabs.js"></script>
+</body>
+
+</html>

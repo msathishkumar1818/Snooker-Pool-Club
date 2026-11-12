@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard | The Cue Club — Snooker &amp; Pool Club</title>
+  <meta name="description"
+    content="The Cue Club Member Portal — Book championship tables, track playing hours, manage membership, and access tournament schedules.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="cue-loader" role="status" aria-live="polite" aria-label="Loading The Cue Club">
+    <div class="loader-emblem">
+      <img src="assets/images/icons/logo.svg" alt="The Cue Club" width="90" height="90">
+      <div class="loader-ring"></div>
+    </div>
+    <span class="loader-text">The Cue Club</span>
+    <span class="loader-subtext">Member Portal</span>
+  </div>
+
+  <div class="db-app">
+
+    <!-- TOPBAR (Modeled directly after reference portal top header) -->
+    <header class="db-topbar" role="banner">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button type="button" class="db-mobile-toggle" id="db-mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="db-brand" aria-label="The Cue Club Member Portal">
+          <img src="assets/images/icons/logo.svg" alt="The Cue Club Crest" class="db-logo-img" width="40" height="40">
+          <div class="db-brand-text">
+            <span class="db-brand-title">THE CUE CLUB</span>
+            <span class="db-brand-sub">MEMBER PORTAL</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="db-topbar-actions">
+        <!-- RTL Toggle -->
+        <button type="button" class="db-ctrl-btn" id="db-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL/LTR">
+          RTL
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="db-ctrl-btn" id="db-theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Logout Button -->
+        <a href="login.html" class="db-logout-btn" aria-label="Logout of member portal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- BODY LAYOUT -->
+    <div class="db-body">
+
+      <!-- LEFT SIDEBAR (Member Menu) -->
+      <aside class="db-sidebar" id="db-sidebar" role="navigation" aria-label="Dashboard Sidebar Navigation">
+        <div>
+          <div class="db-menu-label">MEMBER MENU</div>
+          <ul class="db-nav-list">
+            <li class="db-nav-item active">
+              <button type="button" data-tab="overview">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Overview</span>
+              </button>
+            </li>
+            <li class="db-nav-item">
+              <button type="button" data-tab="booking">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Book Tables</span>
+              </button>
+            </li>
+            <li class="db-nav-item">
+              <button type="button" data-tab="hours">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Hours &amp; Stats</span>
+              </button>
+            </li>
+            <li class="db-nav-item">
+              <button type="button" data-tab="tournaments">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+                <span>Tournaments &amp; Scores</span>
+              </button>
+            </li>
+            <li class="db-nav-item">
+              <button type="button" data-tab="membership">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span>Membership &amp; Plan</span>
+              </button>
+            </li>
+            <li class="db-nav-item">
+              <button type="button" data-tab="profile">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Member Profile</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Concierge On-Duty Desk Card (Modeled after bottom card in reference image) -->
+        <div class="db-sidebar-card">
+          <div class="db-sidebar-card-title">Concierge On-Duty Desk</div>
+          <div class="db-sidebar-card-desc">
+            Questions regarding today's table reservation, cue locker, or coaching masterclass? Hotline: ext. 147.
+          </div>
+          <div class="db-status-live">
+            <span class="db-live-dot" aria-hidden="true"></span>
+            <span>Marcus Vance, Head Host Online</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="db-main" role="main">
+
+        <!-- TAB 1: OVERVIEW (Default active tab matching reference image) -->
+        <div class="db-tab-panel active" id="tab-overview">
+
+          <!-- Welcome Hero Banner -->
+          <div class="db-welcome-card">
+            <div>
+              <h1 class="db-welcome-title">Welcome back, James</h1>
+              <div class="db-welcome-meta">
+                <span>Active Tier: <strong>Masters Championship Club</strong></span>
+                <span>&bull;</span>
+                <span>Member ID: <strong>#CC-84920</strong></span>
+                <span>&bull;</span>
+                <span>Attending Concierge: <strong>Marcus Vance (Grand Salon)</strong></span>
+              </div>
+            </div>
+            <div class="db-welcome-actions">
+              <button type="button" class="db-btn-primary db-btn-gold" data-switch-tab="booking">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Book Table</span>
+              </button>
+              <button type="button" class="db-btn-outline" data-switch-tab="hours">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span>View Scorecards</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4-KPI Metric Cards Row (Identical metric composition to reference screenshot) -->
+          <div class="db-kpi-grid">
+
+            <!-- Card 1: Next Table Duty / Reservation -->
+            <div class="db-kpi-card">
+              <div>
+                <div class="db-kpi-header">
+                  <span class="db-kpi-label">TABLE RESERVATION</span>
+                  <div class="db-kpi-icon-pill" style="background:rgba(212,175,55,0.15);color:var(--color-gold);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                    </svg>
+                  </div>
+                </div>
+                <div class="db-kpi-val">Tomorrow &bull; 07:30 PM</div>
+                <div class="db-kpi-sub">Table 7 &bull; Star Match Baize</div>
+              </div>
+              <div class="db-kpi-footer">
+                <span class="db-table-cell-sub">Concierge: M. Vance</span>
+                <span class="db-kpi-badge">Confirmed</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Hours Logged -->
+            <div class="db-kpi-card">
+              <div>
+                <div class="db-kpi-header">
+                  <span class="db-kpi-label">HOURS LOGGED</span>
+                  <div class="db-kpi-icon-pill" style="background:rgba(11,70,38,0.2);color:#22c55e;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <div class="db-kpi-val">148 <span style="font-size:0.95rem;font-weight:600;opacity:0.7;">/ 200 Hrs</span></div>
+                <div class="db-kpi-sub">Season 4: Championship Quota</div>
+              </div>
+              <div class="db-kpi-footer">
+                <span class="db-table-cell-sub">52 Hours Remaining</span>
+                <span class="db-kpi-badge">Tier Active</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Recent High Break Score -->
+            <div class="db-kpi-card">
+              <div>
+                <div class="db-kpi-header">
+                  <span class="db-kpi-label">HIGH BREAK SCORE</span>
+                  <div class="db-kpi-icon-pill" style="background:rgba(59,130,246,0.15);color:#3b82f6;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="db-kpi-val">124.50 <span style="font-size:0.95rem;font-weight:600;opacity:0.7;">/ 147</span></div>
+                <div class="db-kpi-sub" style="color:#22c55e;font-weight:700;">Club Rank #4 &bull; 98.2%ile</div>
+              </div>
+              <div class="db-kpi-footer">
+                <span class="db-table-cell-sub">Star Series 2026</span>
+                <span class="db-kpi-badge">Verified</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Upcoming Match / Task -->
+            <div class="db-kpi-card">
+              <div>
+                <div class="db-kpi-header">
+                  <span class="db-kpi-label">TOURNAMENT MATCH</span>
+                  <div class="db-kpi-icon-pill" style="background:rgba(212,175,55,0.15);color:var(--color-gold);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                      <path d="M4 22h16"></path>
+                      <path d="M10 14.66V17c0 .55-.45 1-1 1H7v2h10v-2h-2c-.55 0-1-.45-1-1v-2.34c3-.78 5-3.57 5-6.66H5c0 3.09 2 5.88 5 6.66z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="db-kpi-val" style="font-size:1.35rem;">Grand Finals</div>
+                <div class="db-kpi-sub">Quarter-Final vs David Okafor</div>
+              </div>
+              <div class="db-kpi-footer">
+                <a href="#" class="db-kpi-link" data-switch-tab="tournaments">Confirm Match Slot &rarr;</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Schedule Highlights & Upcoming Table Bookings Table -->
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <h2 class="db-section-title">Schedule Highlights &amp; Upcoming Table Bookings</h2>
+              <a href="#" class="db-section-link" data-switch-tab="booking">
+                <span>View Full Schedule</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <div class="db-table-wrapper">
+              <table class="db-table" aria-label="Upcoming Club Sessions and Table Bookings">
+                <thead>
+                  <tr>
+                    <th scope="col">SESSION / TABLE &amp; CUE</th>
+                    <th scope="col">DATE &amp; TIME</th>
+                    <th scope="col">OPPONENT / COACH</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="db-table-cell-title">Star Championship Snooker Simulation</div>
+                      <div class="db-table-cell-sub">Table 7 &bull; Star Tournament Slate &bull; Strachan 6811 Baize</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Tomorrow &bull; 07:30 PM</div>
+                      <div class="db-table-cell-sub">2 Hours Slot Reserved</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">David Okafor (Club Seed #2)</div>
+                      <div class="db-table-cell-sub">Grand Circuit Practice</div>
+                    </td>
+                    <td>
+                      <span class="db-status-badge db-status-confirmed">Confirmed</span>
+                    </td>
+                    <td>
+                      <button type="button" class="db-table-btn highlight">Launch Session</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="db-table-cell-title">Masterclass Coaching &amp; Break Building</div>
+                      <div class="db-table-cell-sub">Table 1 &bull; Riley Aristocrat Arena &bull; Video Telemetry</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Friday &bull; 04:30 PM</div>
+                      <div class="db-table-cell-sub">1.5 Hours Professional Clinic</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Coach M. Jayanthi</div>
+                      <div class="db-table-cell-sub">Resident Master Coach</div>
+                    </td>
+                    <td>
+                      <span class="db-status-badge db-status-confirmed">Confirmed</span>
+                    </td>
+                    <td>
+                      <button type="button" class="db-table-btn">Prep Notes</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="db-table-cell-title">Nine-Ball American Pool League Qualifier</div>
+                      <div class="db-table-cell-sub">Table 14 &bull; Diamond Pro-Am 9ft &bull; Simonis 860 Cloth</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Saturday &bull; 11:00 AM</div>
+                      <div class="db-table-cell-sub">Race to 9 Frames Knockout</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Marcus Chen</div>
+                      <div class="db-table-cell-sub">League Stage Round 2</div>
+                    </td>
+                    <td>
+                      <span class="db-status-badge db-status-scheduled">Scheduled</span>
+                    </td>
+                    <td>
+                      <button type="button" class="db-table-btn">Match Pass</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="db-table-cell-title">Solo High-Break Drill &amp; Routine Practice</div>
+                      <div class="db-table-cell-sub">Table 4 &bull; Heated Slate Championship Arena</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Sunday &bull; 02:00 PM</div>
+                      <div class="db-table-cell-sub">2 Hours Dedicated Play</div>
+                    </td>
+                    <td>
+                      <div class="db-table-cell-title">Solo Session (Locker #42)</div>
+                      <div class="db-table-cell-sub">Custom Cue Reserved</div>
+                    </td>
+                    <td>
+                      <span class="db-status-badge db-status-pending">Pending Check-in</span>
+                    </td>
+                    <td>
+                      <button type="button" class="db-table-btn">Check In</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TAB 2: BOOK TABLES (Interactive Table Deck) -->
+        <div class="db-tab-panel" id="tab-booking">
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <div>
+                <h2 class="db-section-title">Live Table Deck &amp; Slot Selector</h2>
+                <p style="font-size:0.85rem;color:var(--text-light);margin-top:0.25rem;">Select your table and preferred match slot. Instant reservation with concierge notification.</p>
+              </div>
+              <span class="db-kpi-badge" style="font-size:0.8rem;padding:0.4rem 0.8rem;">24 Tables Available</span>
+            </div>
+
+            <div class="db-booking-grid">
+              <!-- Table 1 -->
+              <div class="db-table-card">
+                <div class="db-table-card-header">
+                  <span class="db-table-card-num">Table 01 — Riley Aristocrat</span>
+                  <span class="db-status-badge db-status-confirmed">Snooker</span>
+                </div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Grand Salon North &bull; Match Grade Heated Slate</div>
+                <div class="db-slot-pills">
+                  <button type="button" class="db-slot-pill">10:00 AM</button>
+                  <button type="button" class="db-slot-pill">12:30 PM</button>
+                  <button type="button" class="db-slot-pill active">03:00 PM</button>
+                  <button type="button" class="db-slot-pill">06:00 PM</button>
+                  <button type="button" class="db-slot-pill">08:30 PM</button>
+                </div>
+              </div>
+
+              <!-- Table 7 -->
+              <div class="db-table-card selected">
+                <div class="db-table-card-header">
+                  <span class="db-table-card-num">Table 07 — Star Championship</span>
+                  <span class="db-status-badge db-status-scheduled">Preferred</span>
+                </div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Main TV Arena &bull; Strachan 6811 Baize</div>
+                <div class="db-slot-pills">
+                  <button type="button" class="db-slot-pill">11:00 AM</button>
+                  <button type="button" class="db-slot-pill">01:30 PM</button>
+                  <button type="button" class="db-slot-pill">04:30 PM</button>
+                  <button type="button" class="db-slot-pill active">07:30 PM</button>
+                  <button type="button" class="db-slot-pill">10:00 PM</button>
+                </div>
+              </div>
+
+              <!-- Table 14 -->
+              <div class="db-table-card">
+                <div class="db-table-card-header">
+                  <span class="db-table-card-num">Table 14 — Diamond Pro-Am</span>
+                  <span class="db-status-badge db-status-pending">Pool</span>
+                </div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Pool Lounge East &bull; Simonis 860 Tournament Cloth</div>
+                <div class="db-slot-pills">
+                  <button type="button" class="db-slot-pill">10:30 AM</button>
+                  <button type="button" class="db-slot-pill">01:00 PM</button>
+                  <button type="button" class="db-slot-pill">03:30 PM</button>
+                  <button type="button" class="db-slot-pill">06:30 PM</button>
+                  <button type="button" class="db-slot-pill">09:00 PM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: HOURS & STATS -->
+        <div class="db-tab-panel" id="tab-hours">
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <h2 class="db-section-title">Playing Hours &amp; Analytics Tracker</h2>
+              <span class="db-status-badge db-status-confirmed">Tier: Masters (Unlimited)</span>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem;font-weight:700;margin-bottom:0.35rem;">
+                <span>Current Month Play Progression</span>
+                <span style="color:var(--color-gold);">148 / 200 Hours (74%)</span>
+              </div>
+              <div class="db-progress-bar-wrap">
+                <div class="db-progress-fill" style="width: 74%;"></div>
+              </div>
+              <div style="font-size:0.75rem;color:var(--text-light);display:flex;justify-content:space-between;">
+                <span>0 Hours (Cycle Start)</span>
+                <span>200 Hours Standard Tier Cap</span>
+              </div>
+            </div>
+
+            <div class="db-kpi-grid" style="margin-bottom:0;">
+              <div class="db-kpi-card">
+                <div class="db-kpi-label">TOTAL SESSIONS</div>
+                <div class="db-kpi-val">58</div>
+                <div class="db-kpi-sub">Avg 2.55 Hours / Visit</div>
+              </div>
+              <div class="db-kpi-card">
+                <div class="db-kpi-label">AVERAGE POT SUCCESS</div>
+                <div class="db-kpi-val">91.4%</div>
+                <div class="db-kpi-sub">Long Pots: 84.2%</div>
+              </div>
+              <div class="db-kpi-card">
+                <div class="db-kpi-label">MATCH WIN RATE</div>
+                <div class="db-kpi-val">78.5%</div>
+                <div class="db-kpi-sub">Won 44 of 56 Frames</div>
+              </div>
+              <div class="db-kpi-card">
+                <div class="db-kpi-label">CENTURY BREAKS</div>
+                <div class="db-kpi-val">12</div>
+                <div class="db-kpi-sub">Highest: 124 vs Okafor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: TOURNAMENTS & SCORES -->
+        <div class="db-tab-panel" id="tab-tournaments">
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <h2 class="db-section-title">Enrolled Competitions &amp; Bracket Standing</h2>
+              <a href="tournaments.html" class="db-section-link">All Tournaments &rarr;</a>
+            </div>
+
+            <div class="db-table-wrapper">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th>TOURNAMENT</th>
+                    <th>FORMAT</th>
+                    <th>STAGE</th>
+                    <th>NEXT MATCH</th>
+                    <th>PRIZE POOL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Grand Championship Circuit 2026</strong></td>
+                    <td>Snooker (Best of 19)</td>
+                    <td><span class="db-status-badge db-status-confirmed">Quarter-Finals</span></td>
+                    <td>Dec 14 &bull; 07:00 PM</td>
+                    <td><strong style="color:var(--color-gold);">£12,500</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Winter Masters Invitational</strong></td>
+                    <td>Snooker (Knockout)</td>
+                    <td><span class="db-status-badge db-status-scheduled">Round of 16</span></td>
+                    <td>Jan 10 &bull; 02:00 PM</td>
+                    <td><strong style="color:var(--color-gold);">£8,000</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nine-Ball Open Championship</strong></td>
+                    <td>Pool (Race to 7)</td>
+                    <td><span class="db-status-badge db-status-pending">Seed Group</span></td>
+                    <td>Feb 07 &bull; 11:00 AM</td>
+                    <td><strong style="color:var(--color-gold);">£5,500</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: MEMBERSHIP & PLAN -->
+        <div class="db-tab-panel" id="tab-membership">
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <h2 class="db-section-title">Current Membership Plan Details</h2>
+              <span class="db-kpi-badge">Active &bull; Auto-Renew</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+              <div style="background:var(--bg-surface-elevated);padding:1.25rem;border-radius:10px;border:1px solid var(--border-color);">
+                <div style="font-size:0.75rem;font-weight:700;color:var(--text-light);text-transform:uppercase;">CURRENT TIER</div>
+                <div style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;color:var(--color-gold);margin:0.25rem 0;">Masters Championship</div>
+                <div style="font-size:0.85rem;color:var(--text-muted);">£249 / Month &bull; Billed Monthly</div>
+              </div>
+
+              <div style="background:var(--bg-surface-elevated);padding:1.25rem;border-radius:10px;border:1px solid var(--border-color);">
+                <div style="font-size:0.75rem;font-weight:700;color:var(--text-light);text-transform:uppercase;">NEXT BILLING DATE</div>
+                <div style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;color:var(--text-main);margin:0.25rem 0;">December 01, 2026</div>
+                <div style="font-size:0.85rem;color:var(--text-muted);">Visa ending in &bull;&bull;&bull;&bull; 4092</div>
+              </div>
+
+              <div style="background:var(--bg-surface-elevated);padding:1.25rem;border-radius:10px;border:1px solid var(--border-color);">
+                <div style="font-size:0.75rem;font-weight:700;color:var(--text-light);text-transform:uppercase;">GUEST PASSES REMAINING</div>
+                <div style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;color:#22c55e;margin:0.25rem 0;">Unlimited</div>
+                <div style="font-size:0.85rem;color:var(--text-muted);">VIP Lounge &amp; Vault Access</div>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <a href="pricing.html" class="db-btn-primary db-btn-gold">Change or Upgrade Plan</a>
+              <button type="button" class="db-btn-outline">Download Invoices (PDF)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: MEMBER PROFILE -->
+        <div class="db-tab-panel" id="tab-profile">
+          <div class="db-section-card">
+            <div class="db-section-header">
+              <h2 class="db-section-title">Member Profile &amp; Preferences</h2>
+              <span class="db-kpi-badge">Verified Cueist</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+              <div>
+                <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.35rem;">Full Name</label>
+                <div style="font-size:1rem;font-weight:700;color:var(--text-main);padding:0.75rem 1rem;background:var(--bg-surface-elevated);border-radius:8px;border:1px solid var(--border-color);">James Whitfield</div>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.35rem;">Email Address</label>
+                <div style="font-size:1rem;font-weight:700;color:var(--text-main);padding:0.75rem 1rem;background:var(--bg-surface-elevated);border-radius:8px;border:1px solid var(--border-color);">james.whitfield@cueclub.vip</div>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.35rem;">Locker ID</label>
+                <div style="font-size:1rem;font-weight:700;color:var(--text-main);padding:0.75rem 1rem;background:var(--bg-surface-elevated);border-radius:8px;border:1px solid var(--border-color);">Locker #42 (Masters Vault)</div>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.35rem;">Registered Cue Spec</label>
+                <div style="font-size:1rem;font-weight:700;color:var(--text-main);padding:0.75rem 1rem;background:var(--bg-surface-elevated);border-radius:8px;border:1px solid var(--border-color);">John Parris Ultimate 58" &bull; 9.5mm Tip</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- BOOKING CONFIRMATION MODAL -->
+  <div class="db-modal-backdrop" id="db-booking-modal" role="dialog" aria-modal="true" aria-label="Confirm Table Reservation">
+    <div class="db-modal-content">
+      <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:800;margin-bottom:0.5rem;color:var(--text-main);">Confirm Table Booking</h3>
+      <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.5rem;">Please review your reservation details below:</p>
+
+      <div style="background:var(--bg-surface-elevated);border:1px solid var(--border-color);border-radius:10px;padding:1.25rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="color:var(--text-light);font-weight:600;">Table:</span>
+          <strong id="db-modal-table" style="color:var(--text-main);">Table 07 — Star Championship</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="color:var(--text-light);font-weight:600;">Reserved Time Slot:</span>
+          <strong id="db-modal-slot" style="color:var(--color-gold);">07:30 PM</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="color:var(--text-light);font-weight:600;">Session Duration:</span>
+          <strong style="color:var(--text-main);">2 Hours Included</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="color:var(--text-light);font-weight:600;">Concierge Service:</span>
+          <strong style="color:#22c55e;">Assigned &bull; Complimentary</strong>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:0.75rem;">
+        <button type="button" class="db-btn-outline" id="db-modal-close">Cancel</button>
+        <button type="button" class="db-btn-primary db-btn-gold" id="db-modal-confirm">Confirm Reservation</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
+

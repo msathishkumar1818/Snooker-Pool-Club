@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Championship Tables | The Cue Club — Snooker, Pool &amp; Carom</title>
+  <meta name="description" content="Browse all 24 championship tables at The Cue Club — 12 full-size snooker, 8 pool, and 4 carom tables. Check live availability and book your session instantly.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tables.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="cue-loader" role="status" aria-live="polite" aria-label="Loading">
+    <div class="loader-emblem">
+      <img src="assets/images/icons/logo.svg" alt="The Cue Club" width="90" height="90">
+      <div class="loader-ring"></div>
+    </div>
+    <span class="loader-text">The Cue Club</span>
+    <span class="loader-subtext">Championship Tables</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="cue-header" role="banner">
+    <div class="cue-container header-inner">
+      <a href="index.html" class="brand-link" aria-label="The Cue Club Home">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-item has-dropdown">
+          <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem"><span>Home 1 — Grand Salon</span><span class="dropdown-badge">Classic</span></a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem"><span>Home 2 — Masters Arena</span><span class="dropdown-badge">Modern</span></a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="tables.html" class="nav-link active">Tables</a></div>
+        <div class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle Direction">RTL</button>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a href="login.html" class="btn-login" aria-label="Member Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+          <span>Login</span>
+        </a>
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="brand-logo-img" width="38" height="38">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-controls-bar">
+      <div class="drawer-control-item">
+        <span>Dark Mode</span>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+      <div class="drawer-control-item">
+        <span>RTL / LTR</span>
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+      </div>
+    </div>
+    <nav class="drawer-nav" role="navigation">
+      <div class="mobile-accordion-item">
+        <button type="button" class="mobile-nav-link mobile-accordion-toggle" aria-expanded="false">
+          <span>Home</span>
+          <svg class="mobile-accordion-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="index.html" class="mobile-sub-link"><span>Home 1 — Grand Salon</span><span class="dropdown-badge">Classic</span></a>
+          <a href="home-2.html" class="mobile-sub-link"><span>Home 2 — Masters Arena</span><span class="dropdown-badge">Modern</span></a>
+        </div>
+      </div>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="tables.html" class="mobile-nav-link active">Tables</a>
+      <a href="tournaments.html" class="mobile-nav-link">Tournaments</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn-login" aria-label="Member Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        <span>Member Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- PAGE BANNER -->
+    <div class="tb-banner" role="banner" aria-label="Tables Page Header">
+      <div class="tb-banner-bg" aria-hidden="true">
+        <img src="assets/images/sections/tables-hero-aerial.jpg" alt="" role="presentation" width="1800" height="800" loading="eager">
+        <div class="tb-banner-overlay"></div>
+      </div>
+      <div class="cue-container">
+        <div class="tb-banner-content">
+          <nav class="tb-banner-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="tb-banner-breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="tb-banner-breadcrumb-current">Tables</span>
+          </nav>
+          <h1 class="tb-banner-title">24 <em>Championship</em><br>Tables. One Address.</h1>
+          <p class="tb-banner-desc">Tournament-spec snooker, pool, and carom tables available daily.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         SECTION 1 — LIVE TABLE STATUS GRID
+         24 tables displayed as an interactive visual grid with status badges
+         ======================================================================== -->
+    <section class="tb-status" aria-label="Live Table Availability">
+      <div class="cue-container">
+
+        <div class="tb-status-header">
+          <div class="tb-status-header-left">
+            <div class="tb-eyebrow">
+              <span class="tb-rule" aria-hidden="true"></span>
+              Live Availability
+            </div>
+            <h2 class="tb-title">Table <span class="tb-gold">Status Board</span></h2>
+          </div>
+          <div class="tb-legend" role="list" aria-label="Table status legend">
+            <div class="tb-legend-item" role="listitem"><div class="tb-legend-dot tb-dot-available" aria-hidden="true"></div>Available</div>
+            <div class="tb-legend-item" role="listitem"><div class="tb-legend-dot tb-dot-occupied" aria-hidden="true"></div>In Play</div>
+            <div class="tb-legend-item" role="listitem"><div class="tb-legend-dot tb-dot-reserved" aria-hidden="true"></div>Reserved</div>
+            <div class="tb-legend-item" role="listitem"><div class="tb-legend-dot tb-dot-vip" aria-hidden="true"></div>VIP Only</div>
+          </div>
+        </div>
+
+        <!-- Snooker Tables (1–12) -->
+        <div class="tb-grid-wrap">
+          <div class="tb-grid-section-label">Snooker Tables (Floor 1) — 12ft Star &amp; Riley Aristocrat</div>
+          <div class="tb-grid" role="list">
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 1, Snooker, Available">
+              <span class="tb-table-cell-num">01</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 2, Snooker, In Play">
+              <span class="tb-table-cell-num">02</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 3, Snooker, Available">
+              <span class="tb-table-cell-num">03</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-reserved" role="listitem" tabindex="0" aria-label="Table 4, Snooker, Reserved">
+              <span class="tb-table-cell-num">04</span>
+              <span class="tb-table-cell-status">Booked</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 5, Snooker, Available">
+              <span class="tb-table-cell-num">05</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 6, Snooker, In Play">
+              <span class="tb-table-cell-num">06</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 7, Snooker, Available">
+              <span class="tb-table-cell-num">07</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 8, Snooker, Available">
+              <span class="tb-table-cell-num">08</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 9, Snooker, In Play">
+              <span class="tb-table-cell-num">09</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-reserved" role="listitem" tabindex="0" aria-label="Table 10, Snooker, Reserved">
+              <span class="tb-table-cell-num">10</span>
+              <span class="tb-table-cell-status">Booked</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 11, Snooker, Available">
+              <span class="tb-table-cell-num">11</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 12, Snooker, Available">
+              <span class="tb-table-cell-num">12</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Snooker</span>
+            </div>
+          </div>
+
+          <!-- Pool Tables (13–20) -->
+          <div class="tb-grid-section-label" style="margin-top:1.5rem">Pool Tables (Floor 2) — 9ft Simonis 760</div>
+          <div class="tb-grid" role="list">
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 13, Pool, Available">
+              <span class="tb-table-cell-num">13</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 14, Pool, In Play">
+              <span class="tb-table-cell-num">14</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 15, Pool, Available">
+              <span class="tb-table-cell-num">15</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 16, Pool, Available">
+              <span class="tb-table-cell-num">16</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 17, Pool, In Play">
+              <span class="tb-table-cell-num">17</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-reserved" role="listitem" tabindex="0" aria-label="Table 18, Pool, Reserved">
+              <span class="tb-table-cell-num">18</span>
+              <span class="tb-table-cell-status">Booked</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 19, Pool, Available">
+              <span class="tb-table-cell-num">19</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 20, Pool, Available">
+              <span class="tb-table-cell-num">20</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Pool</span>
+            </div>
+          </div>
+
+          <!-- Carom Tables (21–24) -->
+          <div class="tb-grid-section-label" style="margin-top:1.5rem">Carom Tables (Floor 2) — Heated Simonis 300R</div>
+          <div class="tb-grid" role="list">
+            <div class="tb-table-cell tb-status-available" role="listitem" tabindex="0" aria-label="Table 21, Carom, Available">
+              <span class="tb-table-cell-num">21</span>
+              <span class="tb-table-cell-status">Free</span>
+              <span class="tb-table-cell-type">Carom</span>
+            </div>
+            <div class="tb-table-cell tb-status-vip" role="listitem" tabindex="0" aria-label="Table 22, Carom, VIP Only">
+              <span class="tb-table-cell-num">22</span>
+              <span class="tb-table-cell-status">VIP Only</span>
+              <span class="tb-table-cell-type">Carom</span>
+            </div>
+            <div class="tb-table-cell tb-status-occupied" role="listitem" tabindex="0" aria-label="Table 23, Carom, In Play">
+              <span class="tb-table-cell-num">23</span>
+              <span class="tb-table-cell-status">In Play</span>
+              <span class="tb-table-cell-type">Carom</span>
+            </div>
+            <div class="tb-table-cell tb-status-vip" role="listitem" tabindex="0" aria-label="Table 24, Carom, VIP Only">
+              <span class="tb-table-cell-num">24</span>
+              <span class="tb-table-cell-status">VIP Only</span>
+              <span class="tb-table-cell-type">Carom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tb-status-cta">
+          <a href="login.html" class="tb-btn-gold" aria-label="Login to book a table">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Book a Table Now</span>
+          </a>
+          <a href="pricing.html" class="tb-btn-ghost" aria-label="View pricing plans">View Pricing Plans</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 2 — TABLE SPECIFICATIONS (3 Even Cards with Top Image)
+         Even height, even text, image-heavy top — unique spec comparison layout
+         ======================================================================== -->
+    <section class="tb-specs" aria-label="Table Specifications">
+      <div class="cue-container">
+        <div class="tb-specs-header">
+          <div class="tb-eyebrow" style="justify-content:center;">
+            <span class="tb-rule" aria-hidden="true"></span>
+            Specifications
+          </div>
+          <h2 class="tb-title">Three Disciplines,<br><span class="tb-gold">One Standard</span></h2>
+          <p>Maintained daily to international tournament standards across all 24 tables.</p>
+        </div>
+
+        <div class="tb-spec-cards">
+
+          <!-- Snooker Card -->
+          <article class="tb-spec-card">
+            <div class="tb-spec-img">
+              <img src="assets/images/sections/tables-baize-closeup.jpg" alt="Close-up of championship snooker table baize surface with racked balls under overhead lighting" width="600" height="400" loading="lazy">
+              <div class="tb-spec-img-badge">12 Tables</div>
+            </div>
+            <div class="tb-spec-body">
+              <h3 class="tb-spec-name">Championship Snooker</h3>
+              <p class="tb-spec-tagline">Star &amp; Riley Aristocrat 12ft full-size match championship tables.</p>
+              <div class="tb-spec-rows">
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Dimensions</span>
+                  <span class="tb-spec-row-value">12ft × 6ft</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth</span>
+                  <span class="tb-spec-row-value">WoE Napped</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Lighting</span>
+                  <span class="tb-spec-row-value">4,500K Pro Rig</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth Changed</span>
+                  <span class="tb-spec-row-value">Monthly</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Standard</span>
+                  <span class="tb-spec-row-value">WSF Match</span>
+                </div>
+              </div>
+              <div class="tb-spec-count">
+                <span class="tb-spec-count-num">12</span>
+                <span class="tb-spec-count-label">Full-Size Tables Available</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pool Card -->
+          <article class="tb-spec-card">
+            <div class="tb-spec-img">
+              <img src="assets/images/sections/tables-room-wide.jpg" alt="Wide view of pool table room with overhead lighting and players in background" width="600" height="400" loading="lazy">
+              <div class="tb-spec-img-badge">8 Tables</div>
+            </div>
+            <div class="tb-spec-body">
+              <h3 class="tb-spec-name">American Pool</h3>
+              <p class="tb-spec-tagline">Brunswick Gold Crown 9ft tables with Simonis 760 tournament cloth.</p>
+              <div class="tb-spec-rows">
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Dimensions</span>
+                  <span class="tb-spec-row-value">9ft × 4.5ft</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth</span>
+                  <span class="tb-spec-row-value">Simonis 760</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cushions</span>
+                  <span class="tb-spec-row-value">K66 Profile</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth Changed</span>
+                  <span class="tb-spec-row-value">6 Weeks</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Standard</span>
+                  <span class="tb-spec-row-value">WPA Match</span>
+                </div>
+              </div>
+              <div class="tb-spec-count">
+                <span class="tb-spec-count-num">8</span>
+                <span class="tb-spec-count-label">Pool Tables Available</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carom Card -->
+          <article class="tb-spec-card">
+            <div class="tb-spec-img">
+              <img src="assets/images/sections/tables-cue-rack.jpg" alt="Premium cue rack display beside a carom billiard table in the club's specialist carom room" width="600" height="400" loading="lazy">
+              <div class="tb-spec-img-badge">4 Tables</div>
+            </div>
+            <div class="tb-spec-body">
+              <h3 class="tb-spec-name">Carom Billiards</h3>
+              <p class="tb-spec-tagline">Gabriels Super Pro heated slate tables with Simonis 300 Rapide cloth.</p>
+              <div class="tb-spec-rows">
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Dimensions</span>
+                  <span class="tb-spec-row-value">10ft × 5ft</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth</span>
+                  <span class="tb-spec-row-value">Simonis 300R</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Bed Heating</span>
+                  <span class="tb-spec-row-value">+5°C Regulated</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Cloth Changed</span>
+                  <span class="tb-spec-row-value">8 Weeks</span>
+                </div>
+                <div class="tb-spec-row">
+                  <span class="tb-spec-row-label">Standard</span>
+                  <span class="tb-spec-row-value">UMB Match</span>
+                </div>
+              </div>
+              <div class="tb-spec-count">
+                <span class="tb-spec-count-num">4</span>
+                <span class="tb-spec-count-label">Carom Tables Available</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3 — BOOKING PROCESS (4-Step Horizontal Flow)
+         Connected bubble steps — unique horizontal process layout
+         ======================================================================== -->
+    <section class="tb-booking" aria-label="How to Book a Table">
+      <div class="cue-container">
+        <div class="tb-booking-header">
+          <div>
+            <div class="tb-eyebrow">
+              <span class="tb-rule" aria-hidden="true"></span>
+              Simple Process
+            </div>
+            <h2 class="tb-title">Book a Table<br>in <span class="tb-gold">4 Steps</span></h2>
+          </div>
+          <div class="tb-booking-header-right">
+            <p>Reserve online up to 7 days ahead or walk in anytime.</p>
+            <a href="login.html" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:700;color:var(--color-gold);margin-top:.25rem;" aria-label="Go to member login">
+              <span>Access Member Dashboard</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;stroke:currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="tb-steps" role="list">
+
+          <div class="tb-step" role="listitem">
+            <div class="tb-step-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="tb-step-num">Step 01</span>
+            <h3 class="tb-step-title">Log In</h3>
+            <p class="tb-step-desc">Sign in to your member portal or join in under two minutes.</p>
+          </div>
+
+          <div class="tb-step" role="listitem">
+            <div class="tb-step-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"></rect><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"></path></svg>
+            </div>
+            <span class="tb-step-num">Step 02</span>
+            <h3 class="tb-step-title">Choose Table</h3>
+            <p class="tb-step-desc">Pick from 24 snooker, pool, or carom tables across our floors.</p>
+          </div>
+
+          <div class="tb-step" role="listitem">
+            <div class="tb-step-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <span class="tb-step-num">Step 03</span>
+            <h3 class="tb-step-title">Pick Date &amp; Time</h3>
+            <p class="tb-step-desc">Select your preferred 1-hour block up to 7 days in advance.</p>
+          </div>
+
+          <div class="tb-step" role="listitem">
+            <div class="tb-step-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <span class="tb-step-num">Step 04</span>
+            <h3 class="tb-step-title">Confirmed</h3>
+            <p class="tb-step-desc">Instant confirmation — your table is prepared ready on arrival.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4 — PANORAMIC GALLERY FILMSTRIP
+         Staggered-height horizontal filmstrip — unique visual editorial strip
+         ======================================================================== -->
+    <section class="tb-gallery" aria-label="Table Gallery">
+      <div class="cue-container">
+        <div class="tb-gallery-header">
+          <div class="tb-eyebrow" style="justify-content:center;">
+            <span class="tb-rule" aria-hidden="true"></span>
+            Inside The Club
+          </div>
+          <h2 class="tb-title">The Playing <span class="tb-gold">Environment</span></h2>
+          <p>Crafted surfaces and daylight lighting designed for championship focus.</p>
+        </div>
+      </div>
+
+      <!-- Full-bleed filmstrip — no container wrapper intentional -->
+      <div class="tb-filmstrip" role="list" aria-label="Club photo gallery">
+        <div class="tb-film-cell" role="listitem">
+          <img src="assets/images/sections/tables-hero-aerial.jpg" alt="Aerial view of The Cue Club's championship snooker tables under professional overhead spotlighting" width="800" height="600" loading="lazy">
+          <div class="tb-film-label"><span>Grand Salon Floor</span></div>
+        </div>
+        <div class="tb-film-cell" role="listitem">
+          <img src="assets/images/sections/tables-baize-closeup.jpg" alt="Close-up detail of West of England napped baize championship cloth on a snooker table" width="600" height="600" loading="lazy">
+          <div class="tb-film-label"><span>Championship Baize</span></div>
+        </div>
+        <div class="tb-film-cell" role="listitem">
+          <img src="assets/images/sections/tables-room-wide.jpg" alt="Wide-angle view of pool room showing multiple tables and atmospheric club lighting" width="700" height="600" loading="lazy">
+          <div class="tb-film-label"><span>Pool &amp; Carom Wing</span></div>
+        </div>
+        <div class="tb-film-cell" role="listitem">
+          <img src="assets/images/sections/tables-cue-rack.jpg" alt="Professional cue rack display with premium house cues in the club playing area" width="600" height="600" loading="lazy">
+          <div class="tb-film-label"><span>Equipment Bay</span></div>
+        </div>
+        <div class="tb-film-cell" role="listitem">
+          <img src="assets/images/sections/tables-player-action.jpg" alt="Player in action executing a long pot on a championship table under professional lighting" width="700" height="600" loading="lazy">
+          <div class="tb-film-label"><span>In Session</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5 — VIP ROOM + BOOKING CTA (Mandatory Final Section)
+         Inline booking form + VIP image panel — unique integrated form layout
+         ======================================================================== -->
+    <section class="tb-cta" aria-label="Book a Table CTA">
+      <div class="tb-cta-inner">
+
+        <!-- Left content + quick form -->
+        <div class="tb-cta-content">
+          <div class="tb-cta-content-inner">
+            <div class="tb-eyebrow">
+              <span class="tb-rule" aria-hidden="true"></span>
+              Reserve Your Table
+            </div>
+            <h2 class="tb-cta-title">Your Session<br>Starts <em>Here</em></h2>
+            <p class="tb-cta-desc">Book up to 7 days ahead online or drop in anytime for open tables.</p>
+
+            <form class="tb-quick-form" onsubmit="event.preventDefault(); window.location.href='login.html';" aria-label="Quick table booking form">
+              <div class="tb-quick-row">
+                <select class="tb-quick-select" aria-label="Table type">
+                  <option value="" disabled selected>Select table type</option>
+                  <option value="snooker">Snooker (12ft)</option>
+                  <option value="pool">American Pool (9ft)</option>
+                  <option value="carom">Carom Billiards</option>
+                </select>
+                <input type="date" class="tb-quick-input" aria-label="Select booking date">
+              </div>
+              <div class="tb-quick-row">
+                <select class="tb-quick-select" aria-label="Start time">
+                  <option value="" disabled selected>Start time</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                  <option>6:00 PM</option>
+                  <option>7:00 PM</option>
+                  <option>8:00 PM</option>
+                  <option>9:00 PM</option>
+                </select>
+                <select class="tb-quick-select" aria-label="Duration">
+                  <option value="" disabled selected>Duration</option>
+                  <option>1 Hour</option>
+                  <option>2 Hours</option>
+                  <option>3 Hours</option>
+                  <option>All Evening</option>
+                </select>
+              </div>
+              <button type="submit" class="tb-btn-gold" style="justify-content:center;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                <span>Check Availability &amp; Book</span>
+              </button>
+            </form>
+
+            <p style="font-size:.8rem;font-weight:600;color:var(--text-main);opacity:.6;">
+              Booking requires a member account.
+              <a href="login.html" style="color:var(--color-gold);font-weight:700;">Register free &rarr;</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: VIP Room Image -->
+        <div class="tb-cta-img">
+          <img src="assets/images/sections/tables-vip-room.jpg" alt="Exclusive VIP table room at The Cue Club with premium lighting, leather seating, and championship-grade table" width="800" height="700" loading="lazy">
+          <div class="tb-cta-img-overlay" aria-hidden="true"></div>
+          <div class="tb-cta-img-label">
+            <span class="tb-cta-img-label-num">VIP</span>
+            <span class="tb-cta-img-label-text">Private Table Rooms<br>Gold &amp; Platinum Only</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- SHARED FOOTER -->
+  <footer class="cue-footer" role="contentinfo">
+    <div class="cue-container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-header">
+            <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="footer-logo-img" width="52" height="52">
+            <div>
+              <span class="footer-brand-name">The Cue Club</span>
+              <div class="footer-brand-sub">Snooker &amp; Pool Club</div>
+            </div>
+          </div>
+          <p class="footer-bio">Championship Star and Riley Aristocrat tables, bespoke cue vaults, and luxury members lounge.</p>
+          <div class="footer-badges">
+            <span class="footer-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>Tournament Grade</span>
+            <span class="footer-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>VIP Member Access</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Discovery</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Grand Salon</a></li>
+            <li><a href="home-2.html">Home 2 — Masters Arena</a></li>
+            <li><a href="about.html">About Heritage</a></li>
+            <li><a href="tables.html">Championship Tables</a></li>
+            <li><a href="tournaments.html">Tournaments &amp; League</a></li>
+            <li><a href="pricing.html">Membership &amp; Rates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Hours</h4>
+          <div class="footer-schedule">
+            <div class="schedule-row"><span class="schedule-day">Mon &ndash; Thu</span><span class="schedule-time">10:00 AM &ndash; Midnight</span></div>
+            <div class="schedule-row"><span class="schedule-day">Friday</span><span class="schedule-time">10:00 AM &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Saturday</span><span class="schedule-time">09:00 AM &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Sunday</span><span class="schedule-time">09:00 AM &ndash; Midnight</span></div>
+          </div>
+          <div style="margin-top:1.25rem"><div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--color-gold);font-weight:700">Direct Concierge</div><div style="color:#fff;font-weight:700;font-size:1rem;margin-top:.25rem">+1 (800) 555-CUES</div></div>
+        </div>
+        <div>
+          <h4 class="footer-heading">The Cue Gazette</h4>
+          <p class="footer-newsletter-text">Tournament invites, pro coaching clinics, and club nights.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="newsletter-input" placeholder="Your member email..." required aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="cue-container footer-bottom-inner">
+        <div>&copy; 2026 The Cue Club &bull; Snooker &amp; Pool Club. All rights reserved.</div>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Charter</a></li>
+          <li><a href="#">Club By-Laws</a></li>
+          <li><a href="contact.html">Member Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

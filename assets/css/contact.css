@@ -1,0 +1,894 @@
+/* ==========================================================================
+   CONTACT PAGE (contact.css)
+   Exactly 5 main content sections. All layouts unique.
+   Image-dominant. Text minimal & bright. Cards even height.
+   Zero layout repeat from: Login split, Tables booking flow, About bio-rows,
+   Pricing FAQ, Home CTAs, Tournaments rows.
+   ========================================================================== */
+
+/* ==========================================================================
+   SECTION 1 — HERO (Full-Bleed Image with Minimal Centered Overlay)
+   Layout: Full viewport exterior image + small centered text block
+   Unique: Minimal centred overlay on full exterior image
+   ========================================================================== */
+.ct-hero {
+  position: relative;
+  min-height: 92vh;
+  min-height: 92svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--header-height);
+  overflow: hidden;
+}
+
+.ct-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ct-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ct-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0.62) 0%,
+    rgba(0,0,0,0.48) 55%,
+    rgba(0,0,0,0.82) 100%
+  );
+}
+
+.ct-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: auto 0;
+  padding: 4rem 0;
+}
+
+.ct-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ct-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+.ct-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.ct-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+}
+
+.ct-hero-title em { color: var(--color-gold); font-style: italic; }
+
+.ct-hero-desc {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.68;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.92);
+}
+
+/* Quick contact strip at bottom of hero */
+.ct-hero-quick-strip {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(212,175,55,0.25);
+}
+
+.ct-hero-quick-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  divide-gap: 0;
+}
+
+.ct-quick-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  border-right: 1px solid rgba(212,175,55,0.15);
+  transition: background 0.2s ease;
+}
+
+.ct-quick-item:last-child { border-right: none; }
+.ct-quick-item:hover { background: rgba(212,175,55,0.07); }
+
+.ct-quick-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.ct-quick-icon svg { width: 20px; height: 20px; stroke: currentColor; }
+
+.ct-quick-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.2rem;
+}
+
+.ct-quick-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   SECTION 2 — CONTACT CARDS + FORM
+   Layout: Left 3 image-backed contact channel cards (equal height) + Right form
+   Unique: Image-card contact channels — not on any other page
+   ========================================================================== */
+.ct-contact {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.ct-contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* Left: channel cards */
+.ct-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ct-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.65rem;
+}
+
+.ct-eyebrow-dash {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.ct-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.75rem;
+}
+
+.ct-section-title em { color: var(--color-gold); font-style: italic; }
+
+/* Each channel card: image bg + text overlay */
+.ct-channel-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  min-height: 110px;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ct-channel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+
+.ct-channel-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ct-channel-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: brightness(0.6) saturate(0.8);
+}
+
+.ct-channel-card:hover .ct-channel-bg img { transform: scale(1.06); }
+
+.ct-channel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+[dir="rtl"] .ct-channel-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.ct-channel-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+}
+
+.ct-channel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(212,175,55,0.2);
+  border: 1px solid rgba(212,175,55,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.ct-channel-icon svg { width: 22px; height: 22px; stroke: currentColor; }
+
+.ct-channel-text {
+  flex: 1;
+}
+
+.ct-channel-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.2rem;
+}
+
+.ct-channel-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.ct-channel-arrow {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.ct-channel-card:hover .ct-channel-arrow { transform: translateX(4px); }
+[dir="rtl"] .ct-channel-card:hover .ct-channel-arrow { transform: translateX(-4px); }
+.ct-channel-arrow svg { width: 18px; height: 18px; stroke: currentColor; }
+
+/* Right: Contact Form */
+.ct-form-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.ct-form-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.ct-form-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.78;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.ct-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.ct-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ct-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.ct-input,
+.ct-select,
+.ct-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--bg-body);
+  border: 1.5px solid var(--border-color);
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ct-input:focus,
+.ct-select:focus,
+.ct-textarea:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+
+.ct-input::placeholder,
+.ct-textarea::placeholder {
+  color: var(--text-main);
+  opacity: 0.38;
+}
+
+.ct-select { appearance: none; cursor: pointer; }
+
+.ct-textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.ct-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+  margin-top: 0.5rem;
+}
+
+.ct-submit-btn:hover {
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-1px);
+}
+
+.ct-submit-btn svg { width: 17px; height: 17px; stroke: currentColor; }
+
+/* ==========================================================================
+   SECTION 3 — LOCATION & HOURS (Full-Width Dark Strip + Map + Hours Grid)
+   Layout: Left large map embed | Right 2-col hours grid on dark emerald
+   Unique: Map + hours grid — not used on any page
+   ========================================================================== */
+.ct-location {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 480px;
+  border-top: 1px solid var(--border-color);
+}
+
+.ct-map-side {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface-elevated);
+}
+
+.ct-map-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 400px;
+}
+
+.ct-map-pin-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.ct-map-pin {
+  width: 48px;
+  height: 48px;
+  background: var(--color-gold);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 3px solid #000000;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-map-pin svg {
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  stroke: #000000;
+}
+
+.ct-map-label-bubble {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ct-map-label-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+.ct-map-label-addr {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+}
+
+/* Right: Hours panel */
+.ct-hours-side {
+  background: linear-gradient(135deg, #000000 0%, #0a2e18 60%, #000000 100%);
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.ct-hours-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.ct-hours-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.ct-hours-title em { color: var(--color-gold); font-style: italic; }
+
+.ct-hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ct-hours-cell {
+  background: rgba(0,0,0,0.5);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: background 0.2s ease;
+}
+
+.ct-hours-cell:hover { background: rgba(212,175,55,0.07); }
+
+.ct-hours-day {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.ct-hours-time {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.ct-hours-note {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-gold);
+}
+
+.ct-address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(212,175,55,0.08);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 8px;
+}
+
+.ct-address-row svg { width: 18px; height: 18px; stroke: var(--color-gold); flex-shrink: 0; margin-top: 2px; }
+
+.ct-address-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 4 — LIVE GOOGLE MAP
+   Layout: Centered venue header + full-width interactive Google Maps iframe
+   ========================================================================== */
+.ct-live-map {
+  padding: 4.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.ct-live-map-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ct-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.ct-rule {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.ct-live-map-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.ct-live-map-title em {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.ct-live-map-sub {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.ct-live-map-frame {
+  width: 100%;
+  height: 460px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.ct-live-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================================================
+   SECTION 5 — CLOSING CTA (Mandatory)
+   Layout: Asymmetric 2-col: Left large image (tall) | Right dark stacked text + map CTA
+   Unique: Tall asymmetric split with directions CTA — not used anywhere
+   ========================================================================== */
+.ct-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 410px;
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.ct-cta-img {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 0;
+}
+
+.ct-cta-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 75%;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.ct-cta-img:hover img { transform: scale(1.04); }
+
+.ct-cta-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(0,0,0,0.3) 100%);
+}
+
+[dir="rtl"] .ct-cta-img-overlay {
+  background: linear-gradient(to left, transparent 60%, rgba(0,0,0,0.3) 100%);
+}
+
+.ct-cta-content-side {
+  background: var(--bg-body);
+  display: flex;
+  align-items: center;
+  padding: 2.75rem 3.5rem;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .ct-cta-content-side { border-left: none; border-right: 1px solid var(--border-color); }
+
+.ct-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 440px;
+}
+
+.ct-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.ct-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.ct-cta-title em { color: var(--color-gold); font-style: italic; }
+
+.ct-cta-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.72;
+}
+
+.ct-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ct-cta-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+}
+
+.ct-cta-btn-gold:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+
+.ct-cta-btn-gold svg { width: 17px; height: 17px; stroke: currentColor; }
+
+.ct-cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.ct-cta-btn-ghost:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+/* ==========================================================================
+   RESPONSIVE — Contact
+   ========================================================================== */
+@media (max-width: 1032px) {
+  .ct-contact-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .ct-location {
+    grid-template-columns: 1fr;
+  }
+  .ct-map-side img { min-height: 320px; height: 320px; }
+  .ct-hours-side { padding: 2.5rem 2rem; }
+  .ct-cta { grid-template-columns: 1fr; height: auto; }
+  .ct-cta-img { height: 280px; min-height: 0; }
+  .ct-cta-content-side {
+    padding: 3rem 2rem;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+  [dir="rtl"] .ct-cta-content-side { border-right: none; border-top: 1px solid var(--border-color); }
+}
+
+@media (max-width: 768px) {
+  .ct-hero { min-height: 80vh; }
+  .ct-hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .ct-hero-quick-inner { grid-template-columns: 1fr; }
+  .ct-quick-item { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.15); }
+  .ct-quick-item:last-child { border-bottom: none; }
+
+  .ct-form-panel { padding: 1.75rem 1.25rem; }
+  .ct-field-row { grid-template-columns: 1fr; }
+
+  .ct-live-map { padding: 3rem 0; }
+  .ct-live-map-frame { height: 380px; }
+
+  .ct-hours-grid { grid-template-columns: 1fr 1fr; }
+
+  .ct-cta-img { height: 230px; min-height: 0; }
+  .ct-cta-content-side { padding: 2.5rem 1.5rem; }
+  .ct-cta-content { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .ct-hero-inner { gap: 1rem; }
+  .ct-live-map-frame { height: 320px; }
+  .ct-hours-grid { grid-template-columns: 1fr; }
+  .ct-cta-actions { flex-direction: column; }
+}
+
+/* Equal height card utilities for channel cards */
+.ct-channels { align-items: stretch; }
+.ct-channel-card { flex: 1; min-height: 110px; }
+

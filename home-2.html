@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cue Club | Masters Arena — Championship Snooker &amp; Pool</title>
+  <meta name="description"
+    content="The Cue Club Masters Arena — snooker &amp; pool tables, academy coaching pathway, elite membership tiers, and championship tournaments.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home2.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="cue-loader" role="status" aria-live="polite" aria-label="Loading The Cue Club">
+    <div class="loader-emblem">
+      <img src="assets/images/icons/logo.svg" alt="The Cue Club" width="90" height="90">
+      <div class="loader-ring"></div>
+    </div>
+    <span class="loader-text">The Cue Club</span>
+    <span class="loader-subtext">Masters Arena</span>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="cue-header" role="banner">
+    <div class="cue-container header-inner">
+      <a href="index.html" class="brand-link" aria-label="The Cue Club Home">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club Emblem" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-item has-dropdown">
+          <button type="button" class="nav-link dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 — Grand Salon</span>
+              <span class="dropdown-badge">Classic</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link active" role="menuitem">
+              <span>Home 2 — Masters Arena</span>
+              <span class="dropdown-badge">Modern</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="tables.html" class="nav-link">Tables</a></div>
+        <div class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR"
+          title="Toggle Direction">RTL</button>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="login.html" class="btn-login" aria-label="Member Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="brand-logo-img" width="38" height="38">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-controls-bar">
+      <div class="drawer-control-item">
+        <span>Dark Mode</span>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-control-item">
+        <span>RTL / LTR</span>
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+      </div>
+    </div>
+    <nav class="drawer-nav" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-accordion-item">
+        <button type="button" class="mobile-nav-link mobile-accordion-toggle active" aria-expanded="false">
+          <span>Home</span>
+          <svg class="mobile-accordion-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="index.html" class="mobile-sub-link"><span>Home 1 — Grand Salon</span><span
+              class="dropdown-badge">Classic</span></a>
+          <a href="home-2.html" class="mobile-sub-link active"><span>Home 2 — Masters Arena</span><span
+              class="dropdown-badge">Modern</span></a>
+        </div>
+      </div>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="tables.html" class="mobile-nav-link">Tables</a>
+      <a href="tournaments.html" class="mobile-nav-link">Tournaments</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn-login" aria-label="Member Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Member Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         SECTION 1 — SPLIT-SCREEN HERO
+         Left: Editorial dark text panel | Right: Full-height image
+         UNIQUE: Completely different from Home 1's full-bleed cinematic overlay
+         ======================================================================== -->
+    <section class="h2-hero" aria-label="Masters Arena Hero">
+
+      <!-- Left Editorial Panel -->
+      <div class="h2-hero-left">
+        <div class="h2-hero-eyebrow-wrap">
+          <span class="h2-hero-year-badge">Masters Arena &bull; 2026</span>
+        </div>
+        <h1 class="h2-hero-title">
+          Play at the<br>
+          <span class="h2-title-em">Masters</span>
+          Level
+        </h1>
+        <p class="h2-hero-desc">Championship tables, pro coaching, and elite competition under one roof.</p>
+        <div class="h2-hero-actions">
+          <a href="login.html" class="h2-btn-gold" aria-label="Become a Member">
+            <span>Become a Member</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="tables.html" class="h2-btn-outline-white" aria-label="Explore Tables">Explore Tables</a>
+        </div>
+        <div class="h2-hero-trust">
+          <div class="h2-trust-item">
+            <div class="h2-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+              </svg>
+            </div>
+            <div class="h2-trust-text">
+              <strong>18 Tournaments/yr</strong>
+              <span>All skill levels</span>
+            </div>
+          </div>
+          <div class="h2-trust-item">
+            <div class="h2-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="10" rx="2"></rect>
+                <path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </div>
+            <div class="h2-trust-text">
+              <strong>24 Tables</strong>
+              <span>Match specification</span>
+            </div>
+          </div>
+          <div class="h2-trust-item">
+            <div class="h2-trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="h2-trust-text">
+              <strong>1,200+ Members</strong>
+              <span>Active &amp; growing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Full-Height Image -->
+      <div class="h2-hero-right">
+        <img src="assets/images/hero/hero-home-2-arena.jpg"
+          alt="Dramatic aerial view of championship snooker tables in the Masters Arena under precision spotlighting"
+          width="1200" height="900" loading="eager">
+        <div class="h2-hero-right-label">
+          <span>Est.</span>
+          <span class="h2-label-gold">1998</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 2 — ARENA TABLE DECK (Tabbed Switcher)
+         3 table types: Snooker / Pool / Carom — click tab to switch panel
+         UNIQUE: Interactive panel switcher — not used anywhere in Home 1
+         ======================================================================== -->
+    <section class="h2-arena" aria-label="Arena Table Selection">
+      <div class="cue-container">
+
+        <div class="h2-arena-header">
+          <div class="h2-eyebrow">
+            <span class="h2-eyebrow-line" aria-hidden="true"></span>
+            Our Playing Surfaces
+          </div>
+          <h2 class="h2-section-title">Choose Your Game</h2>
+          <p>Three disciplines under one address — Snooker, American Pool, and Carom.</p>
+        </div>
+
+        <!-- Tab Switcher Buttons -->
+        <div class="h2-tabs" role="tablist" aria-label="Table type selection">
+          <button class="h2-tab-btn h2-tab-active" role="tab" aria-selected="true" aria-controls="h2-panel-snooker"
+            data-target="h2-panel-snooker">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <span>Snooker</span>
+          </button>
+          <button class="h2-tab-btn" role="tab" aria-selected="false" aria-controls="h2-panel-pool"
+            data-target="h2-panel-pool">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            <span>Pool</span>
+          </button>
+          <button class="h2-tab-btn" role="tab" aria-selected="false" aria-controls="h2-panel-carom"
+            data-target="h2-panel-carom">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            <span>Carom</span>
+          </button>
+        </div>
+
+        <!-- Snooker Panel -->
+        <div class="h2-table-panel h2-panel-active" id="h2-panel-snooker" role="tabpanel" aria-labelledby="tab-snooker">
+          <div class="h2-table-img-side">
+            <img src="assets/images/sections/home2-table-snooker.jpg"
+              alt="Full-size Star Billiards snooker table with championship green baize under overhead lighting"
+              width="900" height="600" loading="lazy">
+          </div>
+          <div class="h2-table-info-side">
+            <div class="h2-eyebrow">
+              <span class="h2-eyebrow-line" aria-hidden="true"></span>
+              Championship Standard
+            </div>
+            <h3>Full-Size Snooker</h3>
+            <p>12 full-size tables built to World Snooker Federation match specifications with monthly West of England
+              cloth.</p>
+            <div class="h2-table-specs">
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Table Size</span>
+                <span class="h2-spec-value">12ft × 6ft</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Cloth</span>
+                <span class="h2-spec-value">WoE Napped</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Tables</span>
+                <span class="h2-spec-value">12 Available</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Lighting</span>
+                <span class="h2-spec-value">4,500K Pro Rig</span>
+              </div>
+            </div>
+            <a href="tables.html" class="h2-table-cta" aria-label="Book a Snooker table">
+              <span>Book a Snooker Table</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pool Panel -->
+        <div class="h2-table-panel" id="h2-panel-pool" role="tabpanel" aria-labelledby="tab-pool">
+          <div class="h2-table-img-side">
+            <img src="assets/images/sections/home2-table-pool.jpg"
+              alt="American-size pool table under warm overhead lighting with racked balls ready for play" width="900"
+              height="600" loading="lazy">
+          </div>
+          <div class="h2-table-info-side">
+            <div class="h2-eyebrow">
+              <span class="h2-eyebrow-line" aria-hidden="true"></span>
+              Eight-Ball &amp; Nine-Ball
+            </div>
+            <h3>American Pool</h3>
+            <p>8 American 9ft tables featuring Simonis 760 fast cloth and tournament K66 cushions.</p>
+            <div class="h2-table-specs">
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Table Size</span>
+                <span class="h2-spec-value">9ft × 4.5ft</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Cloth</span>
+                <span class="h2-spec-value">Simonis 760</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Tables</span>
+                <span class="h2-spec-value">8 Available</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Cushions</span>
+                <span class="h2-spec-value">K66 Profile</span>
+              </div>
+            </div>
+            <a href="tables.html" class="h2-table-cta" aria-label="Book a Pool table">
+              <span>Book a Pool Table</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carom Panel -->
+        <div class="h2-table-panel" id="h2-panel-carom" role="tabpanel" aria-labelledby="tab-carom">
+          <div class="h2-table-img-side">
+            <img src="assets/images/sections/home2-table-carom.jpg"
+              alt="Carom billiard table with heated bed technology under warm atmospheric club lighting" width="900"
+              height="600" loading="lazy">
+          </div>
+          <div class="h2-table-info-side">
+            <div class="h2-eyebrow">
+              <span class="h2-eyebrow-line" aria-hidden="true"></span>
+              Three-Cushion &amp; Balkline
+            </div>
+            <h3>Carom Billiards</h3>
+            <p>4 heated-bed carom tables with Simonis 300 Rapide cloth for rapid, consistent roll.</p>
+            <div class="h2-table-specs">
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Table Size</span>
+                <span class="h2-spec-value">10ft × 5ft</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Cloth</span>
+                <span class="h2-spec-value">Simonis 300R</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Tables</span>
+                <span class="h2-spec-value">4 Available</span>
+              </div>
+              <div class="h2-spec-item">
+                <span class="h2-spec-label">Bed</span>
+                <span class="h2-spec-value">Heated Slate</span>
+              </div>
+            </div>
+            <a href="tables.html" class="h2-table-cta" aria-label="Book a Carom table">
+              <span>Book a Carom Table</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3 — ACADEMY PATHWAY (Numbered Vertical Timeline)
+         3 steps, each with large image + editorial text
+         UNIQUE: Numbered timeline connector — nothing like this in Home 1
+         ======================================================================== -->
+    <section class="h2-academy" aria-label="Coaching Academy Pathway">
+      <div class="cue-container">
+
+        <div class="h2-academy-header">
+          <div>
+            <div class="h2-eyebrow">
+              <span class="h2-eyebrow-line" aria-hidden="true"></span>
+              The Academy
+            </div>
+            <h2 class="h2-section-title">Your Path to<br><span class="h2-gold">Mastery</span></h2>
+          </div>
+          <div class="h2-academy-header-right">
+            <p>Structured coaching pathways led by former tour professionals for every skill level.</p>
+            <a href="about.html" class="h2-table-cta" aria-label="Learn more about the Academy">
+              <span>Explore the Academy</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="h2-timeline" role="list">
+
+          <!-- Step 1 -->
+          <div class="h2-timeline-step" role="listitem">
+            <div class="h2-step-marker">
+              <div class="h2-step-num" aria-label="Step 1">01</div>
+            </div>
+            <div class="h2-step-content">
+              <div class="h2-step-img">
+                <img src="assets/images/sections/home2-coach-step1.jpg"
+                  alt="Beginner student learning basic snooker stance and bridge technique from certified coach"
+                  width="600" height="400" loading="lazy">
+              </div>
+              <div class="h2-step-text">
+                <span class="h2-step-tag">Foundation — Weeks 1–4</span>
+                <h3>Fundamentals &amp; Stance</h3>
+                <p>Master stance, bridge hand, and clean cue delivery in one-on-one pro clinics.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="h2-timeline-step" role="listitem">
+            <div class="h2-step-marker">
+              <div class="h2-step-num" aria-label="Step 2">02</div>
+            </div>
+            <div class="h2-step-content">
+              <div class="h2-step-img">
+                <img src="assets/images/sections/home2-coach-step2.jpg"
+                  alt="Intermediate player practising advanced cue ball position drills with video analysis" width="600"
+                  height="400" loading="lazy">
+              </div>
+              <div class="h2-step-text">
+                <span class="h2-step-tag">Development — Weeks 5–12</span>
+                <h3>Tactical Game &amp; Position Play</h3>
+                <p>Develop century break-building, cue-ball speed control, and tactical safety play.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="h2-timeline-step" role="listitem">
+            <div class="h2-step-marker">
+              <div class="h2-step-num" aria-label="Step 3">03</div>
+            </div>
+            <div class="h2-step-content">
+              <div class="h2-step-img">
+                <img src="assets/images/sections/home2-coach-step3.jpg"
+                  alt="Advanced student competing in a practice tournament match under championship conditions"
+                  width="600" height="400" loading="lazy">
+              </div>
+              <div class="h2-step-text">
+                <span class="h2-step-tag">Tournament Readiness — Ongoing</span>
+                <h3>Competition &amp; Match Craft</h3>
+                <p>Match-simulation coaching, live pressure drills, and direct championship ladder entry.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4 — STATS MARQUEE (Full-Width Dark Bold Typography)
+         Huge centred numbers on dark emerald/black grid field
+         UNIQUE: Pure typographic stats section — not in Home 1 at all
+         ======================================================================== -->
+    <section class="h2-stats" aria-label="Club Statistics and Achievements">
+      <div class="cue-container h2-stats-inner">
+        <div class="h2-stats-label-row">
+          <div class="h2-eyebrow" style="justify-content:center;">
+            <span class="h2-eyebrow-line" aria-hidden="true"></span>
+            By The Numbers
+          </div>
+          <h2 class="h2-section-title" style="color:#ffffff;text-align:center;">The Masters Arena<br>in Numbers</h2>
+        </div>
+
+        <div class="h2-big-stats">
+          <div class="h2-big-stat">
+            <span class="h2-big-stat-num">24</span>
+            <span class="h2-big-stat-label">Championship Tables</span>
+          </div>
+          <div class="h2-big-stat">
+            <span class="h2-big-stat-num">1,200+</span>
+            <span class="h2-big-stat-label">Active Club Members</span>
+          </div>
+          <div class="h2-big-stat">
+            <span class="h2-big-stat-num">18</span>
+            <span class="h2-big-stat-label">Annual Tournaments</span>
+          </div>
+          <div class="h2-big-stat">
+            <span class="h2-big-stat-num">28</span>
+            <span class="h2-big-stat-label">Years of Heritage</span>
+          </div>
+        </div>
+
+        <div class="h2-achievement-bar">
+          <div class="h2-achievement-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            Regional Club Year — 5 Consecutive
+          </div>
+          <div class="h2-achievement-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            WSF Accredited Coaching Facility
+          </div>
+          <div class="h2-achievement-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+            6 Professional Players Developed
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5 — DUAL SHOWCASE (Two Full-Height Image Panels)
+         Craft Lounge & Cue Vault — 50/50 side-by-side with text overlay
+         UNIQUE: Full-bleed two-panel split — not used in Home 1
+         ======================================================================== -->
+    <section class="h2-dual" aria-label="Club Facilities Showcase">
+
+      <!-- Panel A: Members' Lounge Bar -->
+      <div class="h2-dual-panel">
+        <img src="assets/images/sections/home2-lounge-bar.jpg"
+          alt="Warm-lit members' lounge bar area with leather seating, trophy cabinet, and refined club décor"
+          width="800" height="700" loading="lazy">
+        <div class="h2-dual-overlay" aria-hidden="true"></div>
+        <div class="h2-dual-divider" aria-hidden="true"></div>
+        <div class="h2-dual-content">
+          <span class="h2-dual-tag">Members Only</span>
+          <h2 class="h2-dual-title">The Craft Lounge</h2>
+          <p class="h2-dual-desc">Members-only bar featuring artisan cocktails, trophy displays, and live tournament
+            screens.</p>
+          <a href="about.html" class="h2-dual-link" aria-label="Explore the Craft Lounge">
+            <span>Explore the Lounge</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Panel B: Cue Vault -->
+      <div class="h2-dual-panel">
+        <img src="assets/images/sections/home2-cue-vault.jpg"
+          alt="Illuminated cue vault wall display showing rows of personalised member cues in custom cases" width="800"
+          height="700" loading="lazy">
+        <div class="h2-dual-overlay" aria-hidden="true"></div>
+        <div class="h2-dual-content">
+          <span class="h2-dual-tag">Platinum Members</span>
+          <h2 class="h2-dual-title">The Cue Vault</h2>
+          <p class="h2-dual-desc">Climate-controlled personal cue storage with 24/7 member card access for Platinum and
+            Gold tiers.</p>
+          <a href="pricing.html" class="h2-dual-link" aria-label="Learn about Cue Vault access">
+            <span>View Membership Plans</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 6 — MEMBERSHIP TIERS (Mandatory CTA — Pricing Cards + Strip)
+         3 tier cards + closing CTA strip
+         UNIQUE: Vertical pricing tier layout — not used in Home 1 (H1 used split image CTA)
+         ======================================================================== -->
+    <section class="h2-membership" aria-label="Membership Plans and CTA">
+      <div class="cue-container">
+
+        <div class="h2-membership-header">
+          <div class="h2-eyebrow" style="justify-content:center;">
+            <span class="h2-eyebrow-line" aria-hidden="true"></span>
+            Join Today
+          </div>
+          <h2 class="h2-section-title">Membership Tiers</h2>
+          <p>Three tiers with full member dashboard table booking and tournament entry.</p>
+        </div>
+
+        <!-- 3 Tier Cards — Even height, flex column, text alignment consistent -->
+        <div class="h2-tier-grid">
+
+          <!-- Tier 1: Silver -->
+          <div class="h2-tier-card">
+            <div class="h2-tier-header">
+              <div class="h2-tier-name">Silver</div>
+              <div class="h2-tier-tagline">The ideal starting point for the passionate amateur</div>
+              <div class="h2-tier-price">
+                <span class="h2-tier-price-amount">$39</span>
+                <span class="h2-tier-price-period">/month</span>
+              </div>
+            </div>
+            <div class="h2-tier-body">
+              <ul class="h2-tier-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>8 hours table time per month</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Member dashboard &amp; booking portal</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Access to open club nights</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Tournament spectator access</span>
+                </li>
+                <li class="h2-feat-disabled">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  <span>Academy coaching sessions</span>
+                </li>
+                <li class="h2-feat-disabled">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  <span>Cue Vault personal storage</span>
+                </li>
+              </ul>
+              <div class="h2-tier-cta">
+                <a href="login.html" class="h2-tier-btn">Start Silver</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 2: Gold (Featured) -->
+          <div class="h2-tier-card h2-tier-featured">
+            <div class="h2-tier-featured-badge">Most Popular</div>
+            <div class="h2-tier-header" style="padding-top:2.75rem;">
+              <div class="h2-tier-name" style="color:var(--color-gold);">Gold</div>
+              <div class="h2-tier-tagline">The serious player's complete package</div>
+              <div class="h2-tier-price">
+                <span class="h2-tier-price-amount">$79</span>
+                <span class="h2-tier-price-period">/month</span>
+              </div>
+            </div>
+            <div class="h2-tier-body">
+              <ul class="h2-tier-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Unlimited table time (off-peak)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>20 peak-hour credits per month</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>2 academy coaching sessions/month</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Tournament registration included</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Craft Lounge member access</span>
+                </li>
+                <li class="h2-feat-disabled">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  <span>Cue Vault personal storage</span>
+                </li>
+              </ul>
+              <div class="h2-tier-cta">
+                <a href="login.html" class="h2-tier-btn h2-tier-btn-featured">Start Gold</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: Platinum -->
+          <div class="h2-tier-card">
+            <div class="h2-tier-header">
+              <div class="h2-tier-name">Platinum</div>
+              <div class="h2-tier-tagline">The ultimate club experience — no compromises</div>
+              <div class="h2-tier-price">
+                <span class="h2-tier-price-amount">$149</span>
+                <span class="h2-tier-price-period">/month</span>
+              </div>
+            </div>
+            <div class="h2-tier-body">
+              <ul class="h2-tier-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Unlimited table time (all hours)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>4 academy coaching sessions/month</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Priority tournament seeding</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Personal Cue Vault storage</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>VIP guest passes (2/month)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Dedicated concierge table service</span>
+                </li>
+              </ul>
+              <div class="h2-tier-cta">
+                <a href="login.html" class="h2-tier-btn">Start Platinum</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA Footer Strip (Mandatory closing element) -->
+        <div class="h2-cta-strip">
+          <div class="h2-cta-strip-left">
+            <strong>No joining fee this season. Cancel anytime.</strong>
+            <span>All memberships include the member dashboard, table booking system, session history, and tournament
+              tracker.</span>
+          </div>
+          <a href="login.html" class="h2-btn-gold" aria-label="Register and join the club">
+            <span>Register Now</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- SHARED FOOTER -->
+  <footer class="cue-footer" role="contentinfo">
+    <div class="cue-container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-header">
+            <img src="assets/images/icons/logo.svg" alt="The Cue Club Crest" class="footer-logo-img" width="52"
+              height="52">
+            <div>
+              <span class="footer-brand-name">The Cue Club</span>
+              <div class="footer-brand-sub">Snooker &amp; Pool Club</div>
+            </div>
+          </div>
+          <p class="footer-bio">Championship Star and Riley Aristocrat tables, bespoke cue vaults, and luxury members
+            lounge.</p>
+          <div class="footer-badges">
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              Tournament Grade
+            </span>
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              VIP Member Access
+            </span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Discovery</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Grand Salon</a></li>
+            <li><a href="home-2.html">Home 2 — Masters Arena</a></li>
+            <li><a href="about.html">About Heritage</a></li>
+            <li><a href="tables.html">Championship Tables</a></li>
+            <li><a href="tournaments.html">Tournaments &amp; League</a></li>
+            <li><a href="pricing.html">Membership &amp; Rates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Hours</h4>
+          <div class="footer-schedule">
+            <div class="schedule-row"><span class="schedule-day">Mon &ndash; Thu</span><span class="schedule-time">10:00
+                AM &ndash; Midnight</span></div>
+            <div class="schedule-row"><span class="schedule-day">Friday</span><span class="schedule-time">10:00 AM
+                &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Saturday</span><span class="schedule-time">09:00 AM
+                &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Sunday</span><span class="schedule-time">09:00 AM
+                &ndash; Midnight</span></div>
+          </div>
+          <div style="margin-top:1.25rem">
+            <div
+              style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--color-gold);font-weight:700">
+              Direct Concierge</div>
+            <div style="color:#fff;font-weight:700;font-size:1rem;margin-top:.25rem">+1 (800) 555-CUES</div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">The Cue Gazette</h4>
+          <p class="footer-newsletter-text">Tournament invites, pro coaching clinics, and club nights.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="newsletter-input" placeholder="Your member email..." required
+              aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="cue-container footer-bottom-inner">
+        <div>&copy; 2026 The Cue Club &bull; Snooker &amp; Pool Club. All rights reserved.</div>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Charter</a></li>
+          <li><a href="#">Club By-Laws</a></li>
+          <li><a href="contact.html">Member Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home2-tabs.js"></script>
+</body>
+
+</html>

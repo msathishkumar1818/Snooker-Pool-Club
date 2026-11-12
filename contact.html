@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Directions | The Cue Club — Snooker &amp; Pool Club</title>
+  <meta name="description"
+    content="Contact The Cue Club concierge, find our location, and get in touch for membership, table bookings, or tournament enquiries. Open 7 days a week.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="cue-loader" role="status" aria-live="polite" aria-label="Loading The Cue Club">
+    <div class="loader-emblem">
+      <img src="assets/images/icons/logo.svg" alt="The Cue Club" width="90" height="90">
+      <div class="loader-ring"></div>
+    </div>
+    <span class="loader-text">The Cue Club</span>
+    <span class="loader-subtext">Snooker &amp; Pool Club</span>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="cue-header" role="banner">
+    <div class="cue-container header-inner">
+      <a href="index.html" class="brand-link" aria-label="The Cue Club Home">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club Emblem" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-item has-dropdown">
+          <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 — Grand Salon</span>
+              <span class="dropdown-badge">Classic</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 — Masters Arena</span>
+              <span class="dropdown-badge">Modern</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="tables.html" class="nav-link">Tables</a></div>
+        <div class="nav-item"><a href="tournaments.html" class="nav-link">Tournaments</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">RTL</button>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="login.html" class="btn-login" aria-label="Member Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/icons/logo.svg" alt="The Cue Club" class="brand-logo-img" width="38" height="38">
+        <div class="brand-text-group">
+          <span class="brand-name">The Cue Club</span>
+          <span class="brand-subtext">Snooker &amp; Pool Club</span>
+        </div>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-controls-bar">
+      <div class="drawer-control-item">
+        <span>Dark Mode</span>
+        <button type="button" class="ctrl-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-control-item">
+        <span>RTL / LTR</span>
+        <button type="button" class="ctrl-btn rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+      </div>
+    </div>
+    <nav class="drawer-nav" role="navigation" aria-label="Mobile Navigation">
+      <div class="mobile-accordion-item">
+        <button type="button" class="mobile-nav-link mobile-accordion-toggle" aria-expanded="false">
+          <span>Home</span>
+          <svg class="mobile-accordion-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="index.html" class="mobile-sub-link"><span>Home 1 — Grand Salon</span><span class="dropdown-badge">Classic</span></a>
+          <a href="home-2.html" class="mobile-sub-link"><span>Home 2 — Masters Arena</span><span class="dropdown-badge">Modern</span></a>
+        </div>
+      </div>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="tables.html" class="mobile-nav-link">Tables</a>
+      <a href="tournaments.html" class="mobile-nav-link">Tournaments</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn-login" aria-label="Member Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Member Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         SECTION 1 — HERO (Full-Bleed Venue Exterior + Quick Contact Strip)
+         Layout: Full viewport exterior image + minimal left headline + 3-col quick strip
+         ======================================================================== -->
+    <section class="ct-hero" aria-label="Contact Page Hero">
+      <div class="ct-hero-bg">
+        <img src="assets/images/sections/contact-venue-exterior.jpg"
+          alt="The Cue Club prestigious exterior venue entrance at dusk"
+          width="1800" height="1000" loading="eager">
+        <div class="ct-hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="ct-hero-content">
+        <div class="cue-container">
+          <div class="ct-hero-inner">
+            <div class="ct-hero-eyebrow">
+              <span class="ct-eyebrow-line" aria-hidden="true"></span>
+              We Are Here
+            </div>
+            <h1 class="ct-hero-title">
+              Let's<br>
+              <em>Connect.</em>
+            </h1>
+            <p class="ct-hero-desc">Concierge support 7 days a week for table bookings, memberships, and events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Contact Strip -->
+      <div class="ct-hero-quick-strip" aria-label="Quick contact information">
+        <div class="cue-container">
+          <div class="ct-hero-quick-inner">
+            <a href="tel:+18005550283" class="ct-quick-item" aria-label="Call us at plus 1 800 555 CUES">
+              <div class="ct-quick-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42C1.6 2.3 2.4 1.5 3.52 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="ct-quick-label">Call Concierge</div>
+                <div class="ct-quick-value">+1 (800) 555-CUES</div>
+              </div>
+            </a>
+
+            <a href="mailto:concierge@cueclub.com" class="ct-quick-item" aria-label="Email our concierge team">
+              <div class="ct-quick-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="ct-quick-label">Email Us</div>
+                <div class="ct-quick-value">concierge@cueclub.com</div>
+              </div>
+            </a>
+
+            <div class="ct-quick-item">
+              <div class="ct-quick-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="ct-quick-label">Today's Hours</div>
+                <div class="ct-quick-value">10:00 AM — Midnight</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 2 — CONTACT CHANNELS + FORM
+         Layout: Left 3 image-backed channel cards | Right contact form
+         ======================================================================== -->
+    <section class="ct-contact" aria-label="Contact Channels and Enquiry Form">
+      <div class="cue-container">
+        <div class="ct-contact-inner">
+
+          <!-- Left: Channel Cards -->
+          <div>
+            <div class="ct-section-eyebrow">
+              <span class="ct-eyebrow-dash" aria-hidden="true"></span>
+              Reach Us
+            </div>
+            <h2 class="ct-section-title">Every Way to <em>Connect</em></h2>
+
+            <div class="ct-channels" role="list">
+
+              <a href="tel:+18005550283" class="ct-channel-card" role="listitem" aria-label="Call our concierge line">
+                <div class="ct-channel-bg" aria-hidden="true">
+                  <img src="assets/images/sections/contact-concierge-desk.jpg" alt="" width="600" height="150" loading="lazy">
+                </div>
+                <div class="ct-channel-overlay" aria-hidden="true"></div>
+                <div class="ct-channel-content">
+                  <div class="ct-channel-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42C1.6 2.3 2.4 1.5 3.52 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div class="ct-channel-text">
+                    <div class="ct-channel-label">Direct Line</div>
+                    <div class="ct-channel-value">+1 (800) 555-CUES</div>
+                  </div>
+                  <div class="ct-channel-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+
+              <a href="mailto:concierge@cueclub.com" class="ct-channel-card" role="listitem" aria-label="Send us an email">
+                <div class="ct-channel-bg" aria-hidden="true">
+                  <img src="assets/images/sections/contact-interior-wide.jpg" alt="" width="600" height="150" loading="lazy">
+                </div>
+                <div class="ct-channel-overlay" aria-hidden="true"></div>
+                <div class="ct-channel-content">
+                  <div class="ct-channel-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="ct-channel-text">
+                    <div class="ct-channel-label">Email Concierge</div>
+                    <div class="ct-channel-value">concierge@cueclub.com</div>
+                  </div>
+                  <div class="ct-channel-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+
+              <div class="ct-channel-card" role="listitem" style="cursor:default;">
+                <div class="ct-channel-bg" aria-hidden="true">
+                  <img src="assets/images/sections/contact-venue-exterior.jpg" alt="" width="600" height="150" loading="lazy">
+                </div>
+                <div class="ct-channel-overlay" aria-hidden="true"></div>
+                <div class="ct-channel-content">
+                  <div class="ct-channel-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="ct-channel-text">
+                    <div class="ct-channel-label">Visit Us</div>
+                    <div class="ct-channel-value">12 Championship Row, London EC1A 1BB</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="ct-form-panel" role="region" aria-label="Send an Enquiry">
+            <div class="ct-form-title">Send an Enquiry</div>
+            <p class="ct-form-subtitle">We reply within 2 hours, or call our concierge directly.</p>
+
+            <form action="#" method="post" novalidate>
+              <div class="ct-form-fields">
+
+                <div class="ct-field-row">
+                  <div class="ct-field">
+                    <label for="ct-first" class="ct-label">First Name</label>
+                    <input type="text" id="ct-first" name="first_name" class="ct-input" placeholder="James" autocomplete="given-name" required>
+                  </div>
+                  <div class="ct-field">
+                    <label for="ct-last" class="ct-label">Last Name</label>
+                    <input type="text" id="ct-last" name="last_name" class="ct-input" placeholder="Whitfield" autocomplete="family-name" required>
+                  </div>
+                </div>
+
+                <div class="ct-field">
+                  <label for="ct-email" class="ct-label">Email Address</label>
+                  <input type="email" id="ct-email" name="email" class="ct-input" placeholder="your@email.com" autocomplete="email" required>
+                </div>
+
+                <div class="ct-field">
+                  <label for="ct-phone" class="ct-label">Phone (Optional)</label>
+                  <input type="tel" id="ct-phone" name="phone" class="ct-input" placeholder="+1 (800) 000-0000" autocomplete="tel">
+                </div>
+
+                <div class="ct-field">
+                  <label for="ct-subject" class="ct-label">Enquiry Type</label>
+                  <select id="ct-subject" name="subject" class="ct-select">
+                    <option value="" disabled selected>Select your enquiry…</option>
+                    <option value="membership">Membership &amp; Pricing</option>
+                    <option value="tables">Table Booking</option>
+                    <option value="tournaments">Tournaments &amp; Events</option>
+                    <option value="coaching">Coaching Sessions</option>
+                    <option value="corporate">Corporate &amp; Private Events</option>
+                    <option value="other">General Enquiry</option>
+                  </select>
+                </div>
+
+                <div class="ct-field">
+                  <label for="ct-message" class="ct-label">Message</label>
+                  <textarea id="ct-message" name="message" class="ct-textarea" placeholder="Tell us how we can help you…" required></textarea>
+                </div>
+
+                <button type="submit" class="ct-submit-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  Send Enquiry
+                </button>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3 — LOCATION & HOURS
+         Layout: Left venue exterior image with map pin | Right emerald dark hours grid
+         ======================================================================== -->
+    <section class="ct-location" aria-label="Club Location and Opening Hours">
+
+      <!-- Left: Visual map/location -->
+      <div class="ct-map-side" role="img" aria-label="The Cue Club location at 12 Championship Row London">
+        <img src="assets/images/sections/contact-venue-exterior.jpg"
+          alt="The Cue Club venue exterior at 12 Championship Row, London"
+          width="900" height="600" loading="lazy">
+        <div class="ct-map-pin-badge" aria-hidden="true">
+          <div class="ct-map-pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="ct-map-label-bubble">
+            <div class="ct-map-label-name">The Cue Club</div>
+            <div class="ct-map-label-addr">12 Championship Row · London EC1A 1BB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Hours Grid -->
+      <div class="ct-hours-side">
+        <div>
+          <div class="ct-hours-eyebrow">
+            <span style="display:inline-block;width:20px;height:1.5px;background:var(--color-gold);margin-right:0.4rem;" aria-hidden="true"></span>
+            Opening Hours
+          </div>
+          <h2 class="ct-hours-title">We're Open <em>Every Day</em></h2>
+        </div>
+
+        <div class="ct-hours-grid">
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Monday</span>
+            <span class="ct-hours-time">10:00 AM – Midnight</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Tuesday</span>
+            <span class="ct-hours-time">10:00 AM – Midnight</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Wednesday</span>
+            <span class="ct-hours-time">10:00 AM – Midnight</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Thursday</span>
+            <span class="ct-hours-time">10:00 AM – Midnight</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Friday</span>
+            <span class="ct-hours-time">10:00 AM – 02:00 AM</span>
+            <span class="ct-hours-note">Extended Hours</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Saturday</span>
+            <span class="ct-hours-time">09:00 AM – 02:00 AM</span>
+            <span class="ct-hours-note">Extended Hours</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Sunday</span>
+            <span class="ct-hours-time">09:00 AM – Midnight</span>
+          </div>
+          <div class="ct-hours-cell">
+            <span class="ct-hours-day">Public Holidays</span>
+            <span class="ct-hours-time">12:00 PM – 10:00 PM</span>
+            <span class="ct-hours-note">Reduced Hours</span>
+          </div>
+        </div>
+
+        <div class="ct-address-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <div class="ct-address-text">
+            12 Championship Row, Clerkenwell<br>
+            London EC1A 1BB, United Kingdom<br>
+            Nearest Tube: Farringdon (3 min walk)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4 — LIVE GOOGLE MAP
+         Layout: Centered venue header + full-width interactive Google Maps iframe
+         ======================================================================== -->
+    <section class="ct-live-map" aria-label="The Cue Club Live Google Map">
+      <div class="cue-container">
+        <div class="ct-live-map-header">
+          <div class="ct-eyebrow">
+            <span class="ct-rule" aria-hidden="true"></span>
+            Live Location Map
+            <span class="ct-rule" aria-hidden="true"></span>
+          </div>
+          <h2 class="ct-live-map-title">Visit <em>The Cue Club</em></h2>
+          <p class="ct-live-map-sub">12 Championship Row, Clerkenwell, London EC1A 1BB &bull; Nearest Tube: Farringdon (3 min walk)</p>
+        </div>
+      </div>
+
+      <div class="ct-live-map-frame">
+        <iframe
+          title="The Cue Club Live Google Map — Clerkenwell, London EC1A 1BB"
+          src="https://maps.google.com/maps?q=Clerkenwell,+London+EC1A+1BB&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5 — CLOSING CTA (Mandatory Final Section)
+         Layout: Left full-height interior image | Right dark editorial content + actions
+         ======================================================================== -->
+    <section class="ct-cta" aria-label="Start Your Cue Club Journey">
+
+      <div class="ct-cta-img" role="img" aria-label="Championship snooker table at The Cue Club">
+        <img src="assets/images/sections/contact-concierge-desk.jpg"
+          alt="The Cue Club concierge team at the reception desk ready to assist members"
+          width="900" height="680" loading="lazy">
+        <div class="ct-cta-img-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="ct-cta-content-side">
+        <div class="ct-cta-content">
+          <div class="ct-cta-eyebrow">
+            <span style="display:inline-block;width:24px;height:1.5px;background:var(--color-gold);" aria-hidden="true"></span>
+            Your First Visit
+          </div>
+          <h2 class="ct-cta-title">
+            Come In.<br>
+            <em>Play Great.</em>
+          </h2>
+          <p class="ct-cta-desc">Walk in today or activate your club membership online in under two minutes.</p>
+          <div class="ct-cta-actions">
+            <a href="login.html" class="ct-cta-btn-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" y1="8" x2="19" y2="14"></line>
+                <line x1="22" y1="11" x2="16" y2="11"></line>
+              </svg>
+              Start Membership
+            </a>
+            <a href="tables.html" class="ct-cta-btn-ghost">Book a Table</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button type="button" class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="cue-footer" role="contentinfo" aria-label="Site Footer">
+    <div class="cue-container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-header">
+            <img src="assets/images/icons/logo.svg" alt="The Cue Club Crest" class="footer-logo-img" width="52" height="52">
+            <div>
+              <span class="footer-brand-name">The Cue Club</span>
+              <div class="footer-brand-sub">Snooker &amp; Pool Club</div>
+            </div>
+          </div>
+          <p class="footer-bio">Championship Star and Riley Aristocrat tables, bespoke cue vaults, and luxury members lounge.</p>
+          <div class="footer-badges">
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              Tournament Grade
+            </span>
+            <span class="footer-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              VIP Member Access
+            </span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Discovery</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Grand Salon</a></li>
+            <li><a href="home-2.html">Home 2 — Masters Arena</a></li>
+            <li><a href="about.html">About Heritage</a></li>
+            <li><a href="tables.html">Championship Tables</a></li>
+            <li><a href="tournaments.html">Tournaments &amp; League</a></li>
+            <li><a href="pricing.html">Membership &amp; Rates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Club Hours</h4>
+          <div class="footer-schedule">
+            <div class="schedule-row"><span class="schedule-day">Mon &ndash; Thu</span><span class="schedule-time">10:00 AM &ndash; Midnight</span></div>
+            <div class="schedule-row"><span class="schedule-day">Friday</span><span class="schedule-time">10:00 AM &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Saturday</span><span class="schedule-time">09:00 AM &ndash; 02:00 AM</span></div>
+            <div class="schedule-row"><span class="schedule-day">Sunday</span><span class="schedule-time">09:00 AM &ndash; Midnight</span></div>
+          </div>
+          <div style="margin-top:1.25rem">
+            <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gold);font-weight:700">Direct Concierge</div>
+            <div style="color:#fff;font-weight:700;font-size:1rem;margin-top:0.25rem">+1 (800) 555-CUES</div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">The Cue Gazette</h4>
+          <p class="footer-newsletter-text">Tournament invites, pro coaching clinics, and club nights.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="newsletter-input" placeholder="Your member email..." required aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="cue-container footer-bottom-inner">
+        <div>&copy; 2026 The Cue Club &bull; Snooker &amp; Pool Club. All rights reserved.</div>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Charter</a></li>
+          <li><a href="#">Club By-Laws</a></li>
+          <li><a href="contact.html">Member Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

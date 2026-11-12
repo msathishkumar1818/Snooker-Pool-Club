@@ -1,0 +1,658 @@
+/* ==========================================================================
+   THE CUE CLUB - RESPONSIVE STYLESHEET (responsive.css)
+   Breakpoints: 360, 375, 393, 412, 425, 427, 440, 768, 820, 960, 1032, 1280, 1440, 1920
+   Covers: iPhone SE/13 Pro/14/15, Pixel 7/8/9/Pro, Galaxy S, iPad Mini/Air/Pro
+   ========================================================================== */
+
+/* ==========================================================================
+   LARGE DESKTOPS (1440px - 1920px+)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  .cue-container {
+    max-width: 1360px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cue-container {
+    max-width: 1540px;
+  }
+  html {
+    font-size: 17px;
+  }
+}
+
+/* ==========================================================================
+   1280px — Laptops & small desktops
+   ========================================================================== */
+@media (max-width: 1280px) {
+  .nav-link {
+    padding: 0.42rem 0.52rem;
+    font-size: 0.81rem;
+    letter-spacing: 0.01em;
+  }
+
+  .header-inner {
+    gap: 0.75rem;
+  }
+
+  .btn-login {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   1032px — Large tablets / smaller laptops (custom breakpoint)
+   ========================================================================== */
+@media (max-width: 1032px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .header-actions .ctrl-btn {
+    display: none !important;
+  }
+
+  .header-actions .btn-login {
+    display: none !important;
+  }
+
+  .mobile-toggle-btn {
+    display: inline-flex !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3rem;
+  }
+
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.85rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   960px — Tablets landscape / small tablets
+   ========================================================================== */
+@media (max-width: 960px) {
+  .cue-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .footer-schedule {
+    gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   768px — iPad Mini / iPad Air portrait / standard tablet
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cue-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 0.98rem;
+  }
+
+  .brand-subtext {
+    font-size: 0.6rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 2rem;
+  }
+
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  #scroll-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  [dir="rtl"] #scroll-to-top {
+    right: auto;
+    left: 1.25rem;
+  }
+
+  /* Mobile drawer width for tablets */
+  .mobile-menu-drawer {
+    width: min(380px, 85vw);
+  }
+}
+
+/* ==========================================================================
+   560px — Large phones / phablets (collapse 2x2 footer cleanly to 1-col)
+   ========================================================================== */
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   440px — Wider small phones (Pixel 9 Pro, some Android phablets)
+   ========================================================================== */
+@media (max-width: 440px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .cue-container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .brand-logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-name {
+    font-size: 0.93rem;
+    letter-spacing: 0.03em;
+  }
+
+  .brand-subtext {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-menu-drawer {
+    width: min(320px, 88vw);
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-top {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* ==========================================================================
+   427px — Pixel 7 / Galaxy S23+
+   ========================================================================== */
+@media (max-width: 427px) {
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .mobile-menu-drawer {
+    width: min(310px, 90vw);
+  }
+}
+
+/* ==========================================================================
+   425px — Standard "mobile" breakpoint / iPhone 14 Pro Max
+   ========================================================================== */
+@media (max-width: 425px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .cue-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brand-logo-img {
+    width: 33px;
+    height: 33px;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  .brand-subtext {
+    font-size: 0.57rem;
+    letter-spacing: 0.11em;
+  }
+
+  .mobile-menu-drawer {
+    width: min(300px, 90vw);
+  }
+
+  .drawer-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .drawer-nav {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   412px — Pixel 8 / Galaxy S22
+   ========================================================================== */
+@media (max-width: 412px) {
+  .brand-name {
+    font-size: 0.88rem;
+  }
+
+  .mobile-menu-drawer {
+    width: 92vw;
+  }
+}
+
+/* ==========================================================================
+   393px — iPhone 15 / iPhone 14 Pro
+   ========================================================================== */
+@media (max-width: 393px) {
+  .cue-container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .brand-name {
+    font-size: 0.87rem;
+  }
+
+  .brand-subtext {
+    font-size: 0.55rem;
+  }
+
+  .mobile-menu-drawer {
+    width: 93vw;
+  }
+
+  #scroll-to-top {
+    width: 38px;
+    height: 38px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* ==========================================================================
+   375px — iPhone SE 3rd Gen / iPhone 13 Pro / iPhone 12
+   ========================================================================== */
+@media (max-width: 375px) {
+  :root {
+    --header-height: 58px;
+  }
+
+  .cue-container {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .brand-logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-name {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-subtext {
+    font-size: 0.54rem;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-menu-drawer {
+    width: 95vw;
+  }
+
+  .mobile-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   360px — Galaxy S21 / Pixel 7 / Many Android base phones
+   ========================================================================== */
+@media (max-width: 360px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .cue-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .brand-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.82rem;
+  }
+
+  .brand-subtext {
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
+  }
+
+  .mobile-menu-drawer {
+    width: 96vw;
+  }
+
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-bio {
+    font-size: 0.85rem;
+  }
+
+  .footer-heading {
+    font-size: 0.8rem;
+  }
+
+  .footer-links li a {
+    font-size: 0.82rem;
+  }
+
+  #scroll-to-top {
+    width: 36px;
+    height: 36px;
+    bottom: 0.875rem;
+    right: 0.875rem;
+  }
+}
+
+/* ==========================================================================
+   320px — Ultra-narrow (small budget Android / legacy iPhone SE 1st)
+   ========================================================================== */
+@media (max-width: 320px) {
+  .brand-subtext {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+  }
+
+  .mobile-menu-drawer {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .mobile-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-toggle-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE DRAWER — Universal rules across all mobile breakpoints
+   ========================================================================== */
+@media (max-width: 1032px) {
+  /* Ensure drawer never overflows viewport */
+  .mobile-menu-drawer {
+    max-width: 100vw;
+  }
+
+  /* Drawer nav links — large touch targets */
+  .mobile-nav-link,
+  .mobile-sub-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Accordion toggle full-width */
+  .mobile-accordion-toggle {
+    width: 100%;
+  }
+
+  /* Controls bar even spacing */
+  .drawer-controls-bar {
+    gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   FOOTER — Responsive schedule rows
+   ========================================================================== */
+@media (max-width: 480px) {
+  .schedule-row {
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.4rem 0;
+  }
+
+  .schedule-time {
+    font-size: 0.82rem;
+  }
+
+  .schedule-day {
+    font-size: 0.72rem;
+  }
+
+  .footer-badges {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   SCROLL-TO-TOP BUTTON — RTL fix across all sizes
+   ========================================================================== */
+[dir="rtl"] #scroll-to-top {
+  right: auto;
+  left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] #scroll-to-top {
+    left: 1.25rem;
+    right: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  [dir="rtl"] #scroll-to-top {
+    left: 0.875rem;
+    right: auto;
+  }
+}
+
+/* ==========================================================================
+   EVEN CARD & EQUAL HEIGHT FLEX UTILITIES
+   Applied site-wide for any grid/card section requiring equal height cards
+   ========================================================================== */
+.card-equal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.card-equal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-equal:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+.card-equal-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.card-equal-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+
+.card-equal-body p,
+.card-equal-body .card-desc {
+  flex: 1 1 auto;
+}
+
+.card-equal-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* 2-col responsive collapse */
+@media (max-width: 600px) {
+  .card-equal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   TEXT BRIGHTNESS — ensure all text reads clearly in dark mode
+   No opacity-muted text below 0.72 on dark backgrounds
+   ========================================================================== */
+html.dark .text-muted-safe {
+  color: rgba(255,255,255,0.78) !important;
+}
+
+html.dark .text-label-safe {
+  color: rgba(255,255,255,0.65) !important;
+}
+
+/* ==========================================================================
+   IMAGE SAFE — all responsive images never overflow container
+   ========================================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Images inside fixed-height containers keep cover */
+.h1-hero-img,
+.h1-tables-img,
+.h1-testi-portrait-wrap img,
+.h1-cta-right img,
+.ab-page-banner-bg img,
+.tb-banner-bg img,
+.pr-hero-bg img,
+.ct-hero-bg img,
+.tn-hero-bg img,
+.pr-visual-img-side img,
+.ct-cta-img img,
+.tn-cta-right img,
+.ct-map-side img,
+.ct-channel-bg img,
+.lg-img-panel img,
+.lg-dashboard-img img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+}
+
+/* ==========================================================================
+   PREFERS REDUCED MOTION — disable all transitions & animations
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

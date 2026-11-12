@@ -1,0 +1,1079 @@
+/* ==========================================================================
+   ABOUT PAGE (about.css)
+   Exactly 5 main content sections. All layouts unique.
+   Zero reuse from Home 1 or Home 2 compositions.
+   ========================================================================== */
+
+/* ==========================================================================
+   SHARED ABOUT TOKENS
+   ========================================================================== */
+.ab-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.ab-rule {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--color-gold);
+  vertical-align: middle;
+}
+
+.ab-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.ab-gold { color: var(--color-gold); }
+
+.ab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  transition: gap 0.2s ease;
+  margin-top: 1.75rem;
+}
+.ab-link:hover { gap: 0.9rem; color: var(--color-gold-hover); }
+.ab-link svg { width: 17px; height: 17px; stroke: currentColor; }
+
+.ab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.ab-btn:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+.ab-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+
+/* Page hero banner (with full background image visible in center + bright text on top) */
+.ab-page-banner {
+  padding-top: var(--header-height);
+  background: #050a07;
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+}
+
+.ab-page-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ab-page-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ab-page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.56) 0%,
+    rgba(0, 0, 0, 0.42) 55%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  pointer-events: none;
+}
+
+.ab-page-banner .cue-container {
+  position: relative;
+  z-index: 2;
+}
+
+.ab-page-banner-inner {
+  position: relative;
+  z-index: 2;
+  padding: 3.75rem 0 4.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.ab-page-banner-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+.ab-page-banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+}
+
+.ab-page-banner-title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.ab-page-banner-desc {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.72;
+  max-width: 660px;
+  margin: 0.5rem auto 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.92);
+}
+
+/* Breadcrumb */
+.ab-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+  margin-bottom: 0.5rem;
+}
+.ab-breadcrumb a {
+  color: rgba(255,255,255,0.85);
+  transition: color 0.15s ease;
+}
+.ab-breadcrumb a:hover { color: var(--color-gold); }
+.ab-breadcrumb-sep { opacity: 0.65; }
+.ab-breadcrumb-current { color: var(--color-gold); }
+
+/* ==========================================================================
+   SECTION 1 — HERITAGE STORY
+   Layout: Right-pinned tall image + Left editorial pull-quote narrative
+   Different from H1 split (H1 image was left; here image is right, plus pull-quote)
+   Not used in Home 2 at all.
+   ========================================================================== */
+.ab-heritage {
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.ab-heritage-inner {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 5rem;
+  align-items: center;
+}
+
+[dir="rtl"] .ab-heritage-inner {
+  direction: rtl;
+}
+
+.ab-heritage-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ab-pull-quote {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 4px solid var(--color-gold);
+  margin: 0.5rem 0;
+}
+
+[dir="rtl"] .ab-pull-quote {
+  padding-left: 0;
+  padding-right: 2rem;
+  border-left: none;
+  border-right: 4px solid var(--color-gold);
+}
+
+.ab-pull-quote-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-style: italic;
+}
+
+.ab-heritage-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ab-heritage-body p {
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.ab-heritage-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ab-fact-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.ab-fact-item:hover {
+  border-color: var(--color-gold);
+}
+
+.ab-fact-num {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+  display: block;
+}
+
+.ab-fact-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.8;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Right image column */
+.ab-heritage-img-col {
+  position: relative;
+}
+
+.ab-heritage-img-frame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 580px;
+}
+
+.ab-heritage-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.ab-heritage-img-frame:hover img {
+  transform: scale(1.03);
+}
+
+.ab-heritage-img-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ab-heritage-img-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: auto;
+  width: fit-content;
+  max-width: calc(100% - 3rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 7px;
+  border: 1px solid rgba(212,175,55,0.3);
+}
+
+[dir="rtl"] .ab-heritage-img-caption {
+  left: auto;
+  right: 1.5rem;
+}
+
+.ab-heritage-img-caption-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: rgba(212,175,55,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.ab-heritage-img-caption-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.ab-heritage-img-caption-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.ab-heritage-img-caption-text strong {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.ab-heritage-img-caption-text span {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   SECTION 2 — COACHING TEAM
+   Layout: Full-width dark band + 3 horizontal coach profile rows
+   Each row: portrait left (square crop), editorial text right
+   UNIQUE: Horizontal biographical rows — not cards, not mosaic, not timeline
+   ========================================================================== */
+.ab-team {
+  padding: 5.5rem 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+}
+
+.ab-team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ab-team-header .ab-eyebrow {
+  justify-content: center;
+}
+
+.ab-team-header .ab-title {
+  margin-bottom: 0.75rem;
+}
+
+.ab-team-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.72;
+}
+
+.ab-team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ab-coach-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.3s ease;
+}
+
+.ab-coach-row:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.ab-coach-portrait {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ab-coach-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.ab-coach-row:hover .ab-coach-portrait img {
+  transform: scale(1.05);
+}
+
+.ab-coach-info {
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+[dir="rtl"] .ab-coach-info {
+  padding: 2rem 0 2rem 2rem;
+}
+
+.ab-coach-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ab-coach-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+}
+
+.ab-coach-role {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.ab-coach-bio {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.72;
+}
+
+.ab-coach-credentials {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ab-credential-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  opacity: 0.75;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* ==========================================================================
+   SECTION 3 — CLUB MILESTONES TIMELINE (Horizontal Scroll)
+   Layout: Left-pinned date markers with horizontal milestone blocks
+   UNIQUE: Horizontal milestone timeline — H2 used vertical numbered, H1 unused
+   ========================================================================== */
+.ab-milestones {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.ab-milestones-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.ab-milestones-header-right p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.72;
+}
+
+/* Horizontal timeline scroll container */
+.ab-timeline-scroll {
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.ab-timeline-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.ab-timeline-scroll::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+.ab-timeline-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+.ab-timeline-track {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  position: relative;
+  padding-top: 52px;
+}
+
+/* Connecting line passes cleanly through center of dots */
+.ab-timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 7px;
+  right: 7px;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-gold), rgba(212,175,55,0.25));
+  z-index: 0;
+}
+
+[dir="rtl"] .ab-timeline-track::before {
+  background: linear-gradient(to left, var(--color-gold), rgba(212,175,55,0.25));
+}
+
+.ab-milestone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 260px;
+  max-width: 260px;
+  padding: 0 2.25rem 0 0;
+}
+
+[dir="rtl"] .ab-milestone {
+  padding: 0 0 0 2.25rem;
+}
+
+.ab-milestone-dot {
+  position: absolute;
+  top: -43px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--bg-body);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.3);
+  z-index: 1;
+}
+
+[dir="rtl"] .ab-milestone-dot {
+  left: auto;
+  right: 0;
+}
+
+.ab-milestone-year {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.65rem;
+}
+
+.ab-milestone-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.ab-milestone-desc {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.78;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   SECTION 4 — VALUES & PHILOSOPHY
+   Layout: Full-width dark emerald background + 4 principle pillars in a 2×2 grid
+   Each pillar: large icon + title + description
+   UNIQUE: Brand values grid on emerald field — not used in H1 or H2
+   ========================================================================== */
+.ab-values {
+  position: relative;
+  overflow: hidden;
+}
+
+.ab-values-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ab-values-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.15;
+}
+
+.ab-values-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #000000 0%, #0B3820 50%, #062B16 100%);
+  opacity: 0.9;
+}
+
+.ab-values-inner {
+  position: relative;
+  z-index: 2;
+  padding: 5.5rem 0;
+}
+
+.ab-values-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ab-values-header .ab-eyebrow {
+  justify-content: center;
+}
+
+.ab-values-header .ab-title {
+  color: #FFFFFF;
+}
+
+.ab-values-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  max-width: 520px;
+  margin: 1rem auto 0;
+  line-height: 1.72;
+}
+
+.ab-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.ab-value-block {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 10px;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.ab-value-block:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.5);
+}
+
+.ab-value-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.ab-value-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+}
+
+.ab-value-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ab-value-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+.ab-value-desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.72;
+}
+
+/* ==========================================================================
+   SECTION 5 — CTA (Mandatory Last Section)
+   Layout: Oversized trophy image panel + dark text side — reversed from Heritage
+   UNIQUE: Right-side dark text, left-side image → opposite of Heritage section
+   ========================================================================== */
+.ab-cta {
+  overflow: hidden;
+}
+
+.ab-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.ab-cta-img-side {
+  position: relative;
+  overflow: hidden;
+}
+
+.ab-cta-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.ab-cta-img-side:hover img {
+  transform: scale(1.03);
+}
+
+.ab-cta-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.ab-cta-content-side {
+  background: linear-gradient(135deg, #000000 0%, #0B3820 100%);
+  display: flex;
+  align-items: center;
+  padding: 4.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ab-cta-content-side::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -10%;
+  width: 50%;
+  height: 100%;
+  background: rgba(212,175,55,0.04);
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.ab-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ab-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.ab-cta-title em {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.ab-cta-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.75;
+  max-width: 420px;
+  margin-bottom: 2.25rem;
+}
+
+.ab-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ab-cta-sublink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.72);
+  transition: color 0.2s ease;
+}
+
+.ab-cta-sublink:hover { color: var(--color-gold); }
+.ab-cta-sublink svg { width: 15px; height: 15px; stroke: currentColor; }
+
+/* ==========================================================================
+   ABOUT RESPONSIVE — All Breakpoints
+   ========================================================================== */
+
+/* 1280px */
+@media (max-width: 1280px) {
+  .ab-heritage-inner {
+    gap: 3.5rem;
+    grid-template-columns: 1fr 400px;
+  }
+  .ab-cta-content-side {
+    padding: 3.5rem 3rem;
+  }
+  .ab-milestones-header {
+    gap: 2rem;
+  }
+}
+
+/* 1032px */
+@media (max-width: 1032px) {
+  .ab-heritage-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .ab-heritage-img-frame {
+    height: 380px;
+  }
+  .ab-heritage-img-col {
+    order: -1;
+  }
+
+  .ab-milestones-header {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ab-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-cta-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .ab-cta-img-side {
+    min-height: 320px;
+    order: -1;
+  }
+  .ab-cta-content-side {
+    padding: 3.5rem 2.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .ab-cta-content-side .ab-eyebrow {
+    justify-content: center;
+  }
+  .ab-cta-desc {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ab-cta-actions {
+    align-items: center;
+  }
+
+  .ab-coach-row {
+    grid-template-columns: 180px 1fr;
+  }
+  .ab-coach-portrait {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+/* 960px */
+@media (max-width: 960px) {
+  .ab-milestone {
+    min-width: 220px;
+    max-width: 220px;
+  }
+}
+
+/* 640px */
+@media (max-width: 640px) {
+  .ab-coach-row {
+    grid-template-columns: 1fr;
+  }
+  .ab-coach-portrait {
+    width: 100%;
+    height: 340px;
+  }
+  .ab-coach-info {
+    padding: 1.5rem;
+  }
+  [dir="rtl"] .ab-coach-info {
+    padding: 1.5rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .ab-page-banner-inner {
+    padding: 3rem 0;
+  }
+  .ab-heritage-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ab-team-header {
+    text-align: left;
+  }
+  .ab-team-header .ab-eyebrow {
+    justify-content: flex-start;
+  }
+  .ab-team-header p {
+    margin: 0;
+  }
+  .ab-cta-content-side {
+    padding: 3rem 1.75rem;
+  }
+  .ab-cta-actions {
+    gap: 0.75rem;
+  }
+  .ab-btn {
+    justify-content: center;
+  }
+  .ab-value-block {
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+}
+
+/* 440px, 427px, 425px, 412px, 393px, 375px, 360px */
+@media (max-width: 440px) {
+  .ab-page-banner-title {
+    font-size: 2.25rem;
+  }
+  .ab-heritage-facts {
+    grid-template-columns: 1fr;
+  }
+  .ab-heritage-img-frame {
+    height: 280px;
+  }
+  .ab-pull-quote {
+    padding-left: 1.25rem;
+  }
+  [dir="rtl"] .ab-pull-quote {
+    padding-right: 1.25rem;
+    padding-left: 0;
+  }
+  .ab-coach-portrait {
+    height: 300px;
+  }
+  .ab-milestone {
+    min-width: 190px;
+    max-width: 190px;
+    padding-right: 1.5rem;
+  }
+  .ab-value-block {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ab-value-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .ab-cta-content-side {
+    padding: 2.5rem 1.25rem;
+  }
+  .ab-cta-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .ab-page-banner-title {
+    font-size: 1.9rem;
+  }
+  .ab-coach-title-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+

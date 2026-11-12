@@ -1,0 +1,916 @@
+/* ==========================================================================
+   TABLES PAGE (tables.css)
+   Exactly 5 main content sections. All layouts unique.
+   Zero reuse from Home 1, Home 2, About, or Login layouts.
+   Text: Bright. Images: Heavy. Cards: Even height + even text alignment.
+   ========================================================================== */
+
+/* Shared tokens */
+.tb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.9rem;
+}
+.tb-rule { display: inline-block; width: 28px; height: 1.5px; background: var(--color-gold); }
+.tb-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+.tb-gold { color: var(--color-gold); }
+
+/* Page banner */
+.tb-banner {
+  padding-top: var(--header-height);
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+}
+
+.tb-banner .cue-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.tb-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tb-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.tb-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.56) 0%,
+    rgba(0, 0, 0, 0.48) 55%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+}
+
+.tb-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tb-banner-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+.tb-banner-breadcrumb a { color: rgba(255,255,255,0.85); transition: color 0.15s ease; }
+.tb-banner-breadcrumb a:hover { color: var(--color-gold); }
+.tb-banner-breadcrumb-sep { opacity: 0.6; }
+.tb-banner-breadcrumb-current { color: var(--color-gold); }
+
+.tb-banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  max-width: 820px;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+}
+.tb-banner-title em { font-style: italic; color: var(--color-gold); }
+
+.tb-banner-desc {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.94);
+  line-height: 1.65;
+  max-width: 620px;
+  margin: 0 auto;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   SECTION 1 — LIVE TABLE STATUS GRID
+   Layout: Interactive grid showing all 24 tables with status badges
+   Unique: Status grid visualization — not used anywhere else
+   ========================================================================== */
+.tb-status {
+  padding: 5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.tb-status-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tb-status-header-left { display: flex; flex-direction: column; }
+
+.tb-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tb-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.tb-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tb-dot-available { background: #22C55E; }
+.tb-dot-occupied  { background: #EF4444; }
+.tb-dot-reserved  { background: var(--color-gold); }
+.tb-dot-vip       { background: #8B5CF6; }
+
+/* Table number grid */
+.tb-grid-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tb-grid-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+}
+
+.tb-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+.tb-table-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.1rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 90px;
+}
+
+.tb-table-cell:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.tb-table-cell-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.tb-table-cell-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.tb-status-available {
+  border-color: rgba(34,197,94,0.4);
+  background: rgba(34,197,94,0.06);
+}
+.tb-status-available .tb-table-cell-status {
+  color: #22C55E;
+  background: rgba(34,197,94,0.1);
+}
+
+.tb-status-occupied {
+  border-color: rgba(239,68,68,0.3);
+  background: rgba(239,68,68,0.04);
+  opacity: 0.75;
+}
+.tb-status-occupied .tb-table-cell-status {
+  color: #EF4444;
+  background: rgba(239,68,68,0.1);
+}
+
+.tb-status-reserved {
+  border-color: rgba(212,175,55,0.5);
+  background: rgba(212,175,55,0.06);
+}
+.tb-status-reserved .tb-table-cell-status {
+  color: var(--color-gold);
+  background: rgba(212,175,55,0.1);
+}
+
+.tb-status-vip {
+  border-color: rgba(139,92,246,0.4);
+  background: rgba(139,92,246,0.06);
+}
+.tb-status-vip .tb-table-cell-status {
+  color: #8B5CF6;
+  background: rgba(139,92,246,0.1);
+}
+
+.tb-table-cell-type {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tb-status-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.tb-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.tb-btn-gold:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+.tb-btn-gold svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.tb-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.tb-btn-ghost:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+/* ==========================================================================
+   SECTION 2 — TABLE SPECS COMPARISON
+   Layout: 3 equal spec panels side-by-side, each with a full top image
+   Even height cards, even text alignment — image heavy, text minimal
+   UNIQUE: 3-panel image-top spec cards — not used in any other page
+   ========================================================================== */
+.tb-specs {
+  padding: 5.5rem 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+}
+
+.tb-specs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tb-specs-header .tb-eyebrow { justify-content: center; }
+
+.tb-specs-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  max-width: 520px;
+  margin: 0.75rem auto 0;
+  line-height: 1.72;
+}
+
+/* 3-column even-height spec cards */
+.tb-spec-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.tb-spec-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.tb-spec-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* Top image — same height across all cards */
+.tb-spec-img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.tb-spec-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.tb-spec-card:hover .tb-spec-img img {
+  transform: scale(1.05);
+}
+
+.tb-spec-img-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000000;
+  background: var(--color-gold);
+  border-radius: 9999px;
+}
+[dir="rtl"] .tb-spec-img-badge { left: auto; right: 1rem; }
+
+/* Card body — flex column so footer sticks to bottom */
+.tb-spec-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.75rem;
+}
+
+.tb-spec-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.tb-spec-tagline {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.75;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Spec rows — even text alignment */
+.tb-spec-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.tb-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tb-spec-row:last-child { border-bottom: none; }
+
+.tb-spec-row-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.65;
+}
+
+.tb-spec-row-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: right;
+}
+
+.tb-spec-count {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.tb-spec-count-num {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.tb-spec-count-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.65;
+  text-align: end;
+}
+
+/* ==========================================================================
+   SECTION 3 — BOOKING PROCESS (Horizontal Step Flow)
+   Layout: 4 steps in a horizontal connected row
+   UNIQUE: Horizontal step flow with connector arrows — not in any prev page
+   ========================================================================== */
+.tb-booking {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.tb-booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.tb-booking-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  gap: 0.85rem;
+}
+
+.tb-booking-header-right p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.72;
+}
+
+/* 4-step horizontal flow */
+.tb-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connecting line */
+.tb-steps::before {
+  content: '';
+  position: absolute;
+  top: 2.1rem;
+  left: calc(12.5% + 1rem);
+  right: calc(12.5% + 1rem);
+  height: 2px;
+  background: linear-gradient(to right, var(--color-gold), rgba(212,175,55,0.3));
+  z-index: 0;
+}
+
+[dir="rtl"] .tb-steps::before {
+  background: linear-gradient(to left, var(--color-gold), rgba(212,175,55,0.3));
+}
+
+.tb-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tb-step-bubble {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background: var(--bg-body);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  transition: background 0.25s ease;
+  box-shadow: 0 0 0 6px rgba(212,175,55,0.08);
+}
+
+.tb-step:hover .tb-step-bubble {
+  background: var(--color-gold);
+  color: #000000;
+}
+
+.tb-step-bubble svg { width: 22px; height: 22px; stroke: currentColor; }
+
+.tb-step-num {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.tb-step-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.tb-step-desc {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.78;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   SECTION 4 — PANORAMIC GALLERY FILMSTRIP
+   Layout: Horizontal filmstrip of 5 images in alternating heights
+   UNIQUE: Staggered-height horizontal filmstrip — entirely new layout
+   ========================================================================== */
+.tb-gallery {
+  padding: 5.5rem 0 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tb-gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tb-gallery-header .tb-eyebrow { justify-content: center; }
+
+.tb-gallery-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  max-width: 480px;
+  margin: 0.75rem auto 0;
+  line-height: 1.7;
+}
+
+/* Full-bleed filmstrip */
+.tb-filmstrip {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+  gap: 4px;
+  height: 420px;
+}
+
+.tb-film-cell {
+  position: relative;
+  overflow: hidden;
+}
+
+.tb-film-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+.tb-film-cell:hover img {
+  transform: scale(1.07);
+}
+
+.tb-film-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tb-film-cell:hover .tb-film-label { opacity: 1; }
+
+.tb-film-label span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECTION 5 — VIP ROOM + BOOKING CTA (Final mandatory CTA)
+   Layout: Right-pinned VIP room image + left CTA with inline booking prompt
+   UNIQUE: Inline form + image adjacent layout — not on any previous page
+   ========================================================================== */
+.tb-cta {
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+}
+
+.tb-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.tb-cta-content {
+  background: var(--bg-body);
+  display: flex;
+  align-items: center;
+  padding: 5rem clamp(2.5rem, 5vw, 5rem);
+}
+
+[dir="rtl"] .tb-cta-content {
+  padding: 5rem clamp(2.5rem, 5vw, 5rem);
+}
+
+.tb-cta-content-inner {
+  width: 100%;
+}
+
+.tb-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.tb-cta-title em { color: var(--color-gold); font-style: italic; }
+
+.tb-cta-desc {
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 440px;
+}
+
+/* Quick booking form */
+.tb-quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.tb-quick-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.tb-quick-input, .tb-quick-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+}
+
+.tb-quick-input:focus, .tb-quick-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+
+.tb-quick-input::placeholder { color: var(--text-main); opacity: 0.4; }
+
+.tb-cta-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.tb-cta-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.tb-cta-img:hover img { transform: scale(1.03); }
+
+.tb-cta-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(11,70,38,0.3) 100%);
+}
+
+.tb-cta-img-label {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+}
+[dir="rtl"] .tb-cta-img-label { right: auto; left: 2rem; }
+
+.tb-cta-img-label-num {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+  display: block;
+}
+
+.tb-cta-img-label-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   TABLES PAGE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1280px) {
+  .tb-cta-content { padding: 4rem 3rem; }
+  [dir="rtl"] .tb-cta-content { padding: 4rem 3rem; }
+  .tb-spec-cards { gap: 1.25rem; }
+}
+
+@media (max-width: 1032px) {
+  .tb-grid { grid-template-columns: repeat(4, 1fr); }
+  .tb-spec-cards { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .tb-booking-header { flex-direction: column; align-items: center; text-align: center; gap: 1.25rem; }
+  .tb-booking-header .tb-eyebrow { justify-content: center; }
+  .tb-booking-header-right { align-items: center; text-align: center; }
+  .tb-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  .tb-steps::before { display: none; }
+  .tb-filmstrip { grid-template-columns: 1fr 1fr 1fr; height: 320px; }
+  .tb-film-cell:nth-child(4), .tb-film-cell:nth-child(5) { display: none; }
+  .tb-cta-inner { grid-template-columns: 1fr; }
+  .tb-cta-img { min-height: 320px; order: -1; }
+  .tb-cta-content { padding: 3.5rem 2.5rem; }
+  [dir="rtl"] .tb-cta-content { padding: 3.5rem 2.5rem; }
+}
+
+@media (max-width: 960px) {
+  .tb-grid { grid-template-columns: repeat(4, 1fr); }
+  .tb-spec-cards { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .tb-spec-cards .tb-spec-card:last-child { grid-column: span 1; max-width: 100%; justify-self: stretch; }
+}
+
+@media (max-width: 768px) {
+  .tb-banner-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+  .tb-grid { grid-template-columns: repeat(3, 1fr); }
+  .tb-spec-cards { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .tb-spec-cards .tb-spec-card:last-child { grid-column: span 1; max-width: 100%; justify-self: stretch; }
+  .tb-filmstrip { grid-template-columns: 1fr 1fr; height: 260px; }
+  .tb-film-cell:nth-child(3), .tb-film-cell:nth-child(4), .tb-film-cell:nth-child(5) { display: none; }
+  .tb-quick-row { grid-template-columns: 1fr; }
+  .tb-status-cta { flex-direction: column; align-items: stretch; }
+  .tb-btn-gold, .tb-btn-ghost { justify-content: center; }
+}
+
+@media (max-width: 440px) {
+  .tb-grid { grid-template-columns: repeat(3, 1fr); }
+  .tb-table-cell { min-height: 78px; padding: 0.85rem 0.5rem; }
+  .tb-table-cell-num { font-size: 1.1rem; }
+  .tb-steps { grid-template-columns: 1fr; gap: 2rem; }
+  .tb-spec-img { height: 180px; }
+  .tb-cta-content { padding: 2.5rem 1.25rem; }
+  .tb-filmstrip { height: 220px; }
+}
+
+@media (max-width: 375px) {
+  .tb-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .tb-table-cell { min-height: 72px; padding: 0.7rem 0.4rem; }
+  .tb-table-cell-num { font-size: 1rem; }
+  .tb-table-cell-status { font-size: 0.58rem; }
+  .tb-table-cell-type { display: none; }
+}
+
+@media (max-width: 360px) {
+  .tb-banner-title { font-size: 1.9rem; }
+  .tb-title { font-size: 1.75rem; }
+  .tb-cta-title { font-size: 1.75rem; }
+}
+

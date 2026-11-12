@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%" fill="none" aria-label="The Cue Club Logo">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D061" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9A7B1C" />
+    </linearGradient>
+    <linearGradient id="emeraldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B6A41" />
+      <stop offset="100%" stop-color="#0B3820" />
+    </linearGradient>
+    <radialGradient id="ballShine" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#E2E8F0" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.9" />
+    </radialGradient>
+    <radialGradient id="redBallShine" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FF6B6B" />
+      <stop offset="60%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring with notches -->
+  <circle cx="60" cy="60" r="54" stroke="url(#goldGradient)" stroke-width="2.5" stroke-dasharray="8 3" opacity="0.85" />
+  <circle cx="60" cy="60" r="49" stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.6" />
+  
+  <!-- Center Dark Baize Disc -->
+  <circle cx="60" cy="60" r="46" fill="url(#emeraldGradient)" stroke="url(#goldGradient)" stroke-width="1" />
+
+  <!-- Crossed Cues -->
+  <!-- Cue 1: Top-Left to Bottom-Right -->
+  <g transform="rotate(45 60 60)">
+    <!-- Butt & handle -->
+    <rect x="58.5" y="14" width="3" height="42" rx="1.5" fill="#5C3317" />
+    <rect x="58.2" y="16" width="3.6" height="12" rx="1" fill="#2E1809" />
+    <rect x="58.7" y="28" width="2.6" height="2" fill="url(#goldGradient)" />
+    <!-- Shaft & ferrule -->
+    <rect x="58.8" y="56" width="2.4" height="48" rx="1" fill="#E8D5B5" />
+    <rect x="58.7" y="101" width="2.6" height="3" fill="url(#goldGradient)" />
+    <rect x="58.9" y="104" width="2.2" height="2.5" rx="0.5" fill="#3B82F6" />
+  </g>
+
+  <!-- Cue 2: Top-Right to Bottom-Left -->
+  <g transform="rotate(-45 60 60)">
+    <!-- Butt & handle -->
+    <rect x="58.5" y="14" width="3" height="42" rx="1.5" fill="#5C3317" />
+    <rect x="58.2" y="16" width="3.6" height="12" rx="1" fill="#2E1809" />
+    <rect x="58.7" y="28" width="2.6" height="2" fill="url(#goldGradient)" />
+    <!-- Shaft & ferrule -->
+    <rect x="58.8" y="56" width="2.4" height="48" rx="1" fill="#E8D5B5" />
+    <rect x="58.7" y="101" width="2.6" height="3" fill="url(#goldGradient)" />
+    <rect x="58.9" y="104" width="2.2" height="2.5" rx="0.5" fill="#3B82F6" />
+  </g>
+
+  <!-- Snooker Triangle Rack at Center -->
+  <polygon points="60,42 74,66 46,66" fill="none" stroke="url(#goldGradient)" stroke-width="1.8" stroke-linejoin="round" />
+
+  <!-- Balls inside triangle -->
+  <!-- Red balls -->
+  <circle cx="60" cy="48" r="3.2" fill="url(#redBallShine)" />
+  <circle cx="56.5" cy="54" r="3.2" fill="url(#redBallShine)" />
+  <circle cx="63.5" cy="54" r="3.2" fill="url(#redBallShine)" />
+  <circle cx="53" cy="60" r="3.2" fill="url(#redBallShine)" />
+  <circle cx="60" cy="60" r="3.2" fill="url(#redBallShine)" />
+  <circle cx="67" cy="60" r="3.2" fill="url(#redBallShine)" />
+
+  <!-- The Black Ball (Spotlight) -->
+  <circle cx="60" cy="74" r="5" fill="#111827" stroke="url(#goldGradient)" stroke-width="0.8" />
+  <circle cx="60" cy="74" r="5" fill="url(#ballShine)" opacity="0.7" />
+  <text x="60" y="76.2" font-size="4.2" font-weight="900" fill="#FFFFFF" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">8</text>
+
+  <!-- Crown / Crest Accent on Top -->
+  <path d="M52 24 L56 28 L60 21 L64 28 L68 24 L66 31 L54 31 Z" fill="url(#goldGradient)" />
+
+  <!-- Star accents -->
+  <circle cx="34" cy="60" r="1.5" fill="url(#goldGradient)" />
+  <circle cx="86" cy="60" r="1.5" fill="url(#goldGradient)" />
+</svg>
+

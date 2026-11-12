@@ -1,0 +1,900 @@
+/* ==========================================================================
+   TOURNAMENTS PAGE (tournaments.css)
+   Exactly 5 main content sections. All layouts unique.
+   Zero reuse from Home 1, Home 2, About, Login, or Tables compositions.
+   ========================================================================== */
+
+/* ==========================================================================
+   SECTION 1 — HERO (Full-Bleed Dark Cinematic with Bracket Overlay)
+   Layout: Full viewport image + left-aligned editorial headline + bracket visual
+   Unique: Left-stack editorial on deep dark overlay — not used on other pages
+   ========================================================================== */
+.tn-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.tn-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tn-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.tn-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(0,0,0,0.92) 0%,
+    rgba(11,70,38,0.65) 50%,
+    rgba(0,0,0,0.3) 100%
+  );
+}
+
+.tn-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 5rem;
+  padding-top: calc(var(--header-height) + 4rem);
+}
+
+.tn-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-end;
+}
+
+/* Left editorial block */
+.tn-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tn-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.tn-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+  animation: tnPulse 2s infinite;
+}
+
+@keyframes tnPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.tn-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+}
+
+.tn-hero-title-gold { color: var(--color-gold); }
+
+.tn-hero-desc {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.72;
+  max-width: 480px;
+}
+
+.tn-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tn-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(212,175,55,0.45);
+  transition: all 0.25s ease;
+}
+
+.tn-btn-primary:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 28px rgba(212,175,55,0.65);
+  transform: translateY(-2px);
+}
+
+.tn-btn-primary svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.tn-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tn-btn-ghost:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+/* Right: Next tournament countdown card */
+.tn-hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tn-next-event-card {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 280px;
+  max-width: 340px;
+  width: 100%;
+}
+
+.tn-event-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.65rem;
+}
+
+.tn-event-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.tn-event-card-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.25rem;
+}
+
+.tn-countdown-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tn-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 7px;
+  padding: 0.65rem 0.25rem;
+}
+
+.tn-countdown-num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.tn-countdown-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.tn-event-card-prize {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(11,70,38,0.4);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 7px;
+}
+
+.tn-prize-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.tn-prize-amount {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECTION 2 — TOURNAMENT SCHEDULE (Full-Width Editorial Event List)
+   Layout: Stacked event rows — large numbered editorial blocks with image side accents
+   Unique: Numbered full-width event rows — not used on any other page
+   ========================================================================== */
+.tn-schedule {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.tn-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.tn-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.65rem;
+}
+
+.tn-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.tn-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.tn-section-title em { color: var(--color-gold); font-style: italic; }
+
+.tn-section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  white-space: nowrap;
+  transition: gap 0.2s ease;
+}
+
+.tn-section-link:hover { gap: 0.8rem; }
+.tn-section-link svg { width: 16px; height: 16px; stroke: currentColor; }
+
+/* Event Rows */
+.tn-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tn-event-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--border-color);
+  transition: background 0.2s ease;
+}
+
+.tn-event-row:last-child { border-bottom: 1px solid var(--border-color); }
+
+.tn-event-row:hover { background: var(--bg-surface-elevated); }
+.tn-event-row:hover .tn-event-num { color: var(--color-gold); }
+
+.tn-event-num {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--border-color);
+  line-height: 1;
+  transition: color 0.2s ease;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tn-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tn-event-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.tn-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tn-event-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.75;
+}
+
+.tn-event-date svg { width: 14px; height: 14px; stroke: currentColor; }
+
+.tn-event-format {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(212,175,55,0.12);
+  color: var(--color-gold);
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+.tn-event-format.snooker { background: rgba(11,70,38,0.15); color: #22a060; border-color: rgba(34,160,96,0.25); }
+.tn-event-format.pool { background: rgba(37,99,235,0.1); color: #60a5fa; border-color: rgba(96,165,250,0.25); }
+.tn-event-format.mixed { background: rgba(212,175,55,0.12); color: var(--color-gold); border-color: rgba(212,175,55,0.2); }
+
+.tn-event-prize-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.tn-event-prize-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.55;
+}
+
+.tn-event-prize-num {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.tn-event-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+}
+
+.tn-event-status.open { background: rgba(34,197,94,0.15); color: #22c55e; }
+.tn-event-status.soon { background: rgba(234,179,8,0.12); color: #eab308; }
+.tn-event-status.closed { background: rgba(239,68,68,0.1); color: #ef4444; }
+.tn-event-status.upcoming { background: rgba(99,102,241,0.12); color: #818cf8; }
+
+/* ==========================================================================
+   SECTION 3 — PAST CHAMPIONS / PRIZE WALL
+   Layout: Full-width mosaic — large trophy image left + stacked champion rows right
+   Unique: Champion bio-row list with trophy image panel — not on any page
+   ========================================================================== */
+.tn-champions {
+  padding: 5.5rem 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tn-champions-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.tn-champions-img-side {
+  position: relative;
+}
+
+.tn-champions-img-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.tn-champions-img-wrap img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.tn-champions-img-wrap:hover img { transform: scale(1.04); }
+
+.tn-champions-img-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 8px;
+}
+
+[dir="rtl"] .tn-champions-img-badge { left: 1.5rem; right: 1.5rem; }
+
+.tn-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(212,175,55,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.tn-badge-icon svg { width: 22px; height: 22px; stroke: currentColor; }
+
+.tn-badge-text strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.tn-badge-text span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+}
+
+/* Champion rows */
+.tn-champions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tn-champion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tn-champion-row {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.2s ease;
+}
+
+.tn-champion-row:last-child { border-bottom: none; }
+.tn-champion-row:hover { background: rgba(212,175,55,0.04); }
+
+.tn-champ-rank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.tn-champ-rank-num {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.tn-champ-rank-year {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.5;
+}
+
+.tn-champ-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tn-champ-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.tn-champ-event {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.65;
+}
+
+.tn-champ-prize {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SECTION 4 — HOW TO ENTER (Horizontal Process Steps)
+   Layout: 4-step horizontal connected flow — DIFFERENT from tables booking flow
+   Unique: Steps use large numbered blocks with image thumbnails + diagonal connectors
+   ========================================================================== */
+.tn-enter {
+  padding: 5.5rem 0;
+  background: linear-gradient(135deg, #000000 0%, #0a2e18 50%, #000000 100%);
+  border-top: 1px solid rgba(212,175,55,0.15);
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+  overflow: hidden;
+}
+
+.tn-enter-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.tn-enter-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+}
+
+.tn-enter-title em { color: var(--color-gold); font-style: italic; }
+
+.tn-enter-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tn-enter-step {
+  background: rgba(0,0,0,0.6);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  transition: background 0.25s ease;
+}
+
+.tn-enter-step:hover { background: rgba(212,175,55,0.07); }
+
+.tn-step-num {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(212,175,55,0.15);
+  line-height: 1;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+}
+
+[dir="rtl"] .tn-step-num { right: auto; left: 1.25rem; }
+
+.tn-step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.tn-step-icon svg { width: 26px; height: 26px; stroke: currentColor; }
+
+.tn-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.tn-step-desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* ==========================================================================
+   SECTION 5 — CLOSING CTA (Mandatory)
+   Layout: Full-bleed image right + left dark editorial — different from all existing CTAs
+   ========================================================================== */
+.tn-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.tn-cta-left {
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 5rem 4rem;
+}
+
+.tn-cta-content {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tn-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.tn-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.tn-cta-title em { color: var(--color-gold); font-style: italic; }
+
+.tn-cta-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  line-height: 1.72;
+}
+
+.tn-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tn-cta-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+}
+
+.tn-cta-btn-gold:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+
+.tn-cta-btn-gold svg { width: 17px; height: 17px; stroke: currentColor; }
+
+.tn-cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tn-cta-btn-ghost:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+.tn-cta-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.tn-cta-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.tn-cta-right:hover img { transform: scale(1.04); }
+
+.tn-cta-right-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 100%);
+}
+
+/* ==========================================================================
+   RESPONSIVE — Tournaments
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .tn-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .tn-hero-right { justify-content: flex-start; }
+  .tn-next-event-card { max-width: 100%; }
+
+  .tn-champions-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .tn-champions-img-wrap img { height: 380px; }
+
+  .tn-enter-steps {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .tn-cta {
+    grid-template-columns: 1fr;
+  }
+  .tn-cta-left { padding: 3.5rem 2rem; }
+  .tn-cta-right { min-height: 320px; }
+}
+
+@media (max-width: 768px) {
+  .tn-hero-content { padding-bottom: 3rem; }
+  .tn-hero-title { font-size: clamp(2rem, 7vw, 3rem); }
+
+  .tn-event-row {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+  }
+  .tn-event-prize-col { display: none; }
+
+  .tn-champions-img-wrap img { height: 280px; }
+
+  .tn-enter-steps {
+    grid-template-columns: 1fr;
+    background: var(--bg-body);
+  }
+
+  .tn-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .tn-cta-left { padding: 3rem 1.5rem; }
+  .tn-cta-content { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .tn-hero-actions { flex-direction: column; align-items: flex-start; }
+  .tn-countdown-row { grid-template-columns: repeat(2,1fr); }
+  .tn-event-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .tn-champion-row { grid-template-columns: 50px 1fr; }
+  .tn-champ-prize { display: none; }
+  .tn-cta-actions { flex-direction: column; }
+}
+

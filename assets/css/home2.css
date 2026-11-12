@@ -1,0 +1,1346 @@
+/* ==========================================================================
+   HOME 2 — MASTERS ARENA (home2.css)
+   Every section: new layout, new composition, new interaction.
+   Zero layouts from Home 1 reused.
+   ========================================================================== */
+
+/* Shared tokens (reuse from home1 where neutral) */
+.h2-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.9rem;
+}
+
+.h2-eyebrow-line {
+  display: inline-block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--color-gold);
+  vertical-align: middle;
+}
+
+.h2-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.h2-gold { color: var(--color-gold); }
+
+/* ==========================================================================
+   SECTION 1 — SPLIT-SCREEN HERO (Vertical Halves)
+   Left: Dark editorial text panel | Right: Full-height image
+   Completely different from Home 1 full-bleed cinematic overlay hero.
+   ========================================================================== */
+.h2-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+}
+
+.h2-hero-left {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative emerald accent bar */
+.h2-hero-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+}
+
+[dir="rtl"] .h2-hero-left::before {
+  left: auto;
+  right: 0;
+}
+
+.h2-hero-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.h2-hero-year-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.h2-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 5.5vw, 5.25rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+}
+
+.h2-hero-title .h2-title-em {
+  display: block;
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.h2-hero-desc {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 2.5rem;
+}
+
+.h2-hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.h2-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.h2-btn-gold:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.6);
+  transform: translateY(-2px);
+}
+
+.h2-btn-gold svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.h2-btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.9);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.h2-btn-outline-white:hover {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Hero Trust Bar */
+.h2-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.h2-trust-item {
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.h2-trust-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(212,175,55,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.h2-trust-icon svg { width: 16px; height: 16px; stroke: currentColor; }
+
+.h2-trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.h2-trust-text strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.h2-trust-text span {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+
+/* Hero Right: Full Image Panel */
+.h2-hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.h2-hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 1s cubic-bezier(0.16,1,0.3,1);
+}
+
+.h2-hero-right:hover img {
+  transform: scale(1.03);
+}
+
+.h2-hero-right-label {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .h2-hero-right-label {
+  right: auto;
+  left: 2rem;
+}
+
+.h2-hero-right-label .h2-label-gold {
+  color: var(--color-gold);
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   SECTION 2 — ARENA TABLE DECK (Tabbed Switcher with 3 Table Types)
+   Layout: Tab switcher header + large horizontal panel per table
+   Different from H1 asymmetric split (this is interactive horizontal switcher)
+   ========================================================================== */
+.h2-arena {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.h2-arena-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.h2-arena-header .h2-section-title {
+  margin-bottom: 1rem;
+}
+
+.h2-arena-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.8;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Tab Switcher */
+.h2-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.h2-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.h2-tab-btn svg { width: 16px; height: 16px; stroke: currentColor; }
+
+.h2-tab-btn:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+.h2-tab-btn.h2-tab-active {
+  color: #000000;
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 14px rgba(212,175,55,0.4);
+}
+
+/* Table Panel */
+.h2-table-panel {
+  display: none;
+}
+
+.h2-table-panel.h2-panel-active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: h2PanelIn 0.35s ease;
+}
+
+@keyframes h2PanelIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.h2-table-img-side {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.h2-table-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.h2-table-panel:hover .h2-table-img-side img {
+  transform: scale(1.03);
+}
+
+.h2-table-info-side {
+  background: var(--bg-surface);
+  padding: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.h2-table-info-side h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.h2-table-info-side p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.75;
+}
+
+.h2-table-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.h2-spec-item {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.h2-spec-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.h2-spec-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.h2-table-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  transition: gap 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.h2-table-cta:hover { gap: 0.85rem; }
+.h2-table-cta svg { width: 17px; height: 17px; stroke: currentColor; }
+
+/* ==========================================================================
+   SECTION 3 — ACADEMY PATHWAY (Vertical Numbered Timeline)
+   Layout: Left numbered connector line + alternating content/image rows
+   Completely new — not used in Home 1
+   ========================================================================== */
+.h2-academy {
+  padding: 5.5rem 0;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.h2-academy-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4.5rem;
+}
+
+.h2-academy-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.h2-academy-header-right p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.85;
+  line-height: 1.75;
+}
+
+/* Timeline Steps */
+.h2-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vertical connecting line */
+.h2-timeline::before {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  left: 2rem;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-gold), rgba(212,175,55,0.2));
+  z-index: 0;
+}
+
+[dir="rtl"] .h2-timeline::before {
+  left: auto;
+  right: 2rem;
+}
+
+.h2-timeline-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.h2-timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Step marker */
+.h2-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 4rem;
+}
+
+.h2-step-num {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--bg-body);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 6px rgba(212,175,55,0.08);
+}
+
+/* Step Content Row: image + text side by side */
+.h2-step-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.h2-step-content:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.h2-step-img {
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.h2-step-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.h2-step-content:hover .h2-step-img img {
+  transform: scale(1.05);
+}
+
+.h2-step-text {
+  padding: 1.75rem 2rem 1.75rem 0;
+}
+
+[dir="rtl"] .h2-step-text {
+  padding: 1.75rem 0 1.75rem 2rem;
+}
+
+.h2-step-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.65rem;
+}
+
+.h2-step-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.h2-step-text p {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.82;
+  line-height: 1.72;
+}
+
+/* ==========================================================================
+   SECTION 4 — STATS MARQUEE (Full-Width Dark Bold Typography)
+   Layout: Huge centred numbers on dark emerald field — no image overlay
+   Unique: Massive typographic stats — nothing like this in Home 1
+   ========================================================================== */
+.h2-stats {
+  background: linear-gradient(135deg, #000000 0%, #0B3820 50%, #000000 100%);
+  padding: 5.5rem 0;
+  border-top: 1px solid rgba(212,175,55,0.2);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gold grid pattern */
+.h2-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.h2-stats-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.h2-stats-label-row {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.h2-stats-label-row .h2-eyebrow {
+  justify-content: center;
+}
+
+.h2-stats-label-row .h2-section-title {
+  color: #FFFFFF;
+}
+
+.h2-big-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.h2-big-stat {
+  background: rgba(0,0,0,0.6);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition: background 0.25s ease;
+}
+
+.h2-big-stat:hover {
+  background: rgba(212,175,55,0.08);
+}
+
+.h2-big-stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.h2-big-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  max-width: 140px;
+}
+
+/* Horizontal achievement bar */
+.h2-achievement-bar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.h2-achievement-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+.h2-achievement-pill svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECTION 5 — DUAL SHOWCASE (Two Full-Height Panels Side-by-Side)
+   Layout: 50/50 vertical panels with centered full-image + text overlay
+   Different from Home 1 (not portraits, not mosaic, not timeline)
+   ========================================================================== */
+.h2-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+.h2-dual-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.h2-dual-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+
+.h2-dual-panel:hover img {
+  transform: scale(1.05);
+}
+
+.h2-dual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+  transition: background 0.4s ease;
+}
+
+.h2-dual-panel:hover .h2-dual-overlay {
+  background: linear-gradient(to top, rgba(11,70,38,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.15) 100%);
+}
+
+.h2-dual-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.h2-dual-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.h2-dual-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.03em;
+}
+
+.h2-dual-desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  max-width: 340px;
+}
+
+.h2-dual-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  border-bottom: 1px solid rgba(212,175,55,0.4);
+  padding-bottom: 2px;
+  transition: gap 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.h2-dual-link:hover {
+  gap: 0.85rem;
+  color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+}
+
+.h2-dual-link svg { width: 15px; height: 15px; stroke: currentColor; }
+
+/* Panel divider line */
+.h2-dual-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(212,175,55,0.3);
+  z-index: 3;
+}
+
+[dir="rtl"] .h2-dual-divider {
+  right: auto;
+  left: 0;
+}
+
+/* ==========================================================================
+   SECTION 6 — MEMBERSHIP TIERS CTA (3-Column Pricing Cards + Full CTA)
+   Layout: Centered headline + 3-tier pricing columns (Mandatory last CTA)
+   Different from Home 1's split image CTA panel
+   ========================================================================== */
+.h2-membership {
+  padding: 5.5rem 0;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+
+.h2-membership-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.h2-membership-header .h2-eyebrow {
+  justify-content: center;
+}
+
+.h2-membership-header .h2-section-title {
+  margin-bottom: 1rem;
+}
+
+.h2-membership-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.8;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* 3 Tier Cards — Even height, even text, even alignment */
+.h2-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
+
+.h2-tier-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.h2-tier-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* Featured tier */
+.h2-tier-featured {
+  border-color: var(--color-gold);
+  background: linear-gradient(180deg, rgba(212,175,55,0.07) 0%, var(--bg-surface) 100%);
+  position: relative;
+}
+
+.h2-tier-featured-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  padding: 0.3rem 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000000;
+  background: var(--color-gold);
+  border-radius: 0 0 8px 8px;
+  white-space: nowrap;
+}
+
+.h2-tier-header {
+  padding: 2rem 1.75rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.h2-tier-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.h2-tier-tagline {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-main);
+  opacity: 0.7;
+  margin-bottom: 1.25rem;
+}
+
+.h2-tier-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.h2-tier-price-amount {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+.h2-tier-price-period {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.65;
+  padding-bottom: 0.4rem;
+}
+
+.h2-tier-body {
+  padding: 1.5rem 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.h2-tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.h2-tier-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.h2-tier-features li svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.h2-tier-features li.h2-feat-disabled {
+  opacity: 0.4;
+}
+
+.h2-tier-features li.h2-feat-disabled svg {
+  stroke: var(--text-main);
+}
+
+.h2-tier-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.h2-tier-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 7px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  background: transparent;
+}
+
+.h2-tier-btn:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(212,175,55,0.08);
+}
+
+.h2-tier-btn-featured {
+  color: #000000;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(212,175,55,0.4);
+}
+
+.h2-tier-btn-featured:hover {
+  color: #000000;
+  background: linear-gradient(135deg, #FFE28A 0%, #F5D061 100%);
+  box-shadow: 0 6px 20px rgba(212,175,55,0.6);
+  transform: translateY(-1px);
+  border-color: transparent;
+}
+
+/* CTA Footer Strip */
+.h2-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #0B4626, #052A14);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.h2-cta-strip-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.h2-cta-strip-left strong {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+.h2-cta-strip-left span {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.72);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   HOME 2 RESPONSIVE
+   ========================================================================== */
+
+/* 1280px */
+@media (max-width: 1280px) {
+  .h2-hero-left {
+    padding: 4rem 3rem;
+  }
+  .h2-table-info-side {
+    padding: 2.5rem 2rem;
+  }
+  .h2-big-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1032px tablet landscape */
+@media (max-width: 1032px) {
+  .h2-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .h2-hero-left {
+    padding: 3.5rem 2.5rem;
+    min-height: auto;
+    align-items: center;
+    text-align: center;
+  }
+  .h2-hero-eyebrow-wrap {
+    justify-content: center;
+  }
+  .h2-hero-desc {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .h2-hero-actions {
+    justify-content: center;
+  }
+  .h2-hero-trust {
+    width: 100%;
+    max-width: 680px;
+    text-align: start;
+  }
+  .h2-hero-left::before {
+    display: none;
+  }
+  .h2-hero-right {
+    min-height: 380px;
+    order: -1;
+  }
+
+  .h2-table-panel.h2-panel-active {
+    grid-template-columns: 1fr;
+  }
+  .h2-table-img-side {
+    min-height: 320px;
+  }
+
+  .h2-academy-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .h2-step-content {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .h2-dual {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .h2-dual-panel {
+    min-height: 380px;
+  }
+  .h2-dual-divider {
+    display: none;
+  }
+
+  .h2-tier-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .h2-tier-header {
+    padding: 1.75rem 1.25rem 1.25rem;
+  }
+  .h2-tier-body {
+    padding: 1.25rem;
+  }
+}
+
+/* 960px */
+@media (max-width: 960px) {
+  .h2-big-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .h2-step-content {
+    grid-template-columns: 1fr;
+  }
+  .h2-step-img {
+    height: 220px;
+  }
+  .h2-step-text {
+    padding: 1.5rem;
+  }
+  .h2-tier-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .h2-tier-featured {
+    order: -1;
+  }
+  .h2-tier-header {
+    padding: 2rem 1.75rem 1.5rem;
+  }
+  .h2-tier-body {
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .h2-hero-left {
+    padding: 2.5rem 1.5rem;
+  }
+  .h2-hero-title {
+    font-size: clamp(2.25rem, 9vw, 3.5rem);
+  }
+  .h2-hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .h2-btn-gold, .h2-btn-outline-white {
+    width: auto;
+    justify-content: center;
+  }
+  .h2-hero-trust {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .h2-trust-item {
+    padding: 0.85rem 0.75rem;
+    gap: 0.5rem;
+  }
+  .h2-cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .h2-cta-strip .h2-btn-gold {
+    width: auto;
+    justify-content: center;
+  }
+  .h2-table-info-side {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* 540px */
+@media (max-width: 540px) {
+  .h2-hero-trust {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .h2-trust-item {
+    padding: 0.9rem 1rem;
+    gap: 0.6rem;
+  }
+}
+
+/* 440, 425, 412, 393, 375, 360 */
+@media (max-width: 440px) {
+  .h2-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .h2-hero-actions .h2-btn-gold,
+  .h2-hero-actions .h2-btn-outline-white {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+  .h2-cta-strip .h2-btn-gold {
+    width: 100%;
+    max-width: 260px;
+  }
+  .h2-big-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .h2-big-stat {
+    padding: 1.75rem 1rem;
+  }
+  .h2-big-stat-num {
+    font-size: 2rem;
+  }
+  .h2-tabs {
+    gap: 0.35rem;
+  }
+  .h2-tab-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+  }
+  .h2-step-content {
+    border-radius: 8px;
+  }
+  .h2-dual-content {
+    padding: 1.75rem;
+  }
+  .h2-tier-grid {
+    gap: 1.25rem;
+  }
+  .h2-cta-strip {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .h2-hero-title {
+    font-size: 2rem;
+  }
+  .h2-hero-left {
+    padding: 2rem 1.25rem;
+  }
+  .h2-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .h2-tab-btn {
+    justify-content: center;
+  }
+}
+
